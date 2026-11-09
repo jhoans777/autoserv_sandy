@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Frutas y verduras frescas de Autoservicio Sandi J.V en Villavicencio">
+  <title>Fruver | Autoservicio Sandi J.V</title>
+
+  <!-- ===== HOJAS DE ESTILO =====
+       2) cssfr.css   = estilos SOLO del fruver. Va DESPUÉS para poder cambiar lo anterior. -->
+  <link rel="stylesheet" href="css/cssfr.css">
+</head>
+
+<body class="pagina-fruver">
+
+<!-- ===== ENCABEZADO: logo | nombre | menú | MAPA (arriba a la derecha) ===== -->
+<header>
+  <img src="img/Logotipo%20colorido%20FRUVER%20la%2033.png" alt="Logo de Fruver La 33" class="logo-header">
+
+  <div class="marca">
+    <h1>FRUVER LA 33</h1>
+    <p>FRUTAS Y VERDURAS</p>
+  </div>
+
+  <!-- Menú: enlaces entre las páginas -->
+  <nav>
+    <a href="index.html">SANDY J.V</a>
+    <a href="frutas.html">INICIO</a>
+    
+  </nav>
+
+  <!-- MAPA: queda en la esquina superior derecha -->
+  <a href="https://maps.app.goo.gl/k4kcjEmKPcFjkW6F6" class="btn-mapa" target="_blank" rel="noopener" aria-label="Cómo llegar a Fruver La 33">
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="#EA4335" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+    <span>Cómo llegar</span>
+  </a>
+</header>
+
+<!-- ===== BANNER DE DOMICILIOS ===== -->
+<div class="banner-domicilio">
+  <span class="etiqueta-domicilio">🛵 Domicilio gratis</span>
+  <p>por compras mayores a <strong>$100.000</strong></p>
+</div>
+
+<main>
+  <!-- ===== INICIO: TEXTO + ESPACIO PARA IMAGEN ===== -->
+  <section class="catalogo-intro">
+
+    <div class="intro-texto">
+      <h2>Frutas y verduras frescas</h2>
+      <p>Productos frescos todos los días. Toca "Comprar" para pedir al instante o "Añadir al carrito" para enviar todo junto por WhatsApp.</p>
+      <!-- Índice: cada enlace salta a la sección con el mismo id -->
+      <div class="indice">
+        <a href="#frutas">🍎 Frutas</a>
+        <a href="#verduras">🥕 Verduras y hortalizas</a>
+      </div>
+    </div>
+
+
+    <div class="slider de-2">
+      <img src="img\fachada-fruver-la-33.jpg" alt="Fachada de Autoservicio Sandi J.V en Villavicencio">
+      <img src="img\fondo-fruver.jpg" alt="Pasillo con arroz y snacks">
+      <img src="img\fruver esquinero.jpg" alt="Pasillo con arroz y snacks">
+      
+    </div>
+
+  </section>
+
+  
+  <!-- ===== SECCIÓN 1: FRUTAS (6 productos) ===== -->
+  <section class="subcategoria" id="frutas">
+    <h3>Frutas</h3>
+    <div class="grid-productos">
+
+      <!-- PRODUCTO 1: BANANO -->
+      <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/banano.jpg" alt="Banano" loading="lazy">
+        </div>
+        <h4>Banano</h4>
+        <p class="presentacion">Por unidad</p>
+        <p class="precio">$500</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Banano" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Banano" data-precio="500">🛒 Añadir al carrito</button>
+        </div></div>
+
+      <!-- PRODUCTO 2: uva-->
+      <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/uva.jpg" alt="Uva" loading="lazy">
+        </div>
+        <h4>Uva</h4>
+        <p class="presentacion">Libra</p>
+        <p class="precio">$5.500</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Uva" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Uva" data-precio="5500">🛒 Añadir al carrito</button>
+        </div></div>
+
+      <!-- PRODUCTO 3: lulo -->
+      <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/lulo.jpg" alt="Lulo" loading="lazy">
+        </div>
+        <h4>Lulo</h4>
+        <p class="presentacion">Libra</p>
+        <p class="precio">$3.000</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Lulo" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Lulo" data-precio="3000">🛒 Añadir al carrito</button>
+        </div></div>
+
+      <!-- PRODUCTO 4: MANGO -->
+      <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/mango.jpg" alt="Mango" loading="lazy">
+        </div>
+        <h4>Mango</h4>
+        <p class="presentacion">Libra</p>
+        <p class="precio">$3.000</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Mango" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Mango" data-precio="3000">🛒 Añadir al carrito</button>
+        </div></div>
+
+      <!-- PRODUCTO 5: mango azucar -->
+      <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/mango%20de%20azucar.jpg" alt="Mango de azúcar" loading="lazy">
+        </div>
+        <h4>Mango de azúcar</h4>
+        <p class="presentacion">Por libra</p>
+        <p class="precio">$5.000</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Mango%20de%20az%C3%BAcar" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Mango de azúcar" data-precio="5000">🛒 Añadir al carrito</button>
+        </div></div>
+
+      <!-- PRODUCTO 6: sandia -->
+      <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/sandia.jpg" alt="Sandía" loading="lazy">
+        </div>
+        <h4>Sandía</h4>
+        <p class="presentacion">Por libra</p>
+        
+        <p class="precio">$2.000</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Sand%C3%ADa" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Sandía" data-precio="2000">🛒 Añadir al carrito</button>
+        </div></div>
+       <!-- PRODUCTO 7: MANZANA -->
+      <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/manzana-verde-y-roja.jpg" alt="Manzana" loading="lazy">
+        </div>
+        <h4>Manzana</h4>
+        <p class="presentacion">Por libra</p>
+        <p class="precio">$1.500</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Manzana" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Manzana" data-precio="1500">🛒 Añadir al carrito</button>
+        </div></div>
+  <!-- PRODUCTO : tomate -->
+      <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/tomate.jpg" alt="Tomate" loading="lazy">
+        </div>
+        <h4>Tomate</h4>
+        <p class="presentacion">Por libra</p>
+        <p class="precio">$1.500</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Tomate" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Tomate" data-precio="1500">🛒 Añadir al carrito</button>
+        </div></div>
+       <!-- PRODUCTO :maracuya -->
+      <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/maracuya.jpg" alt="Maracuya" loading="lazy">
+        </div>
+        <h4>Maracuya</h4>
+        <p class="presentacion">Por libra</p>
+        <p class="precio">$2.000</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Maracuya" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Maracuya" data-precio="2000">🛒 Añadir al carrito</button>
+        </div></div>
+    <!-- PRODUCTO :pulpa -->
+      <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/fruta-congelada.jpg" alt="Pulpa de fruta" loading="lazy">
+        </div>
+        <h4>Pulpa de fruta</h4>
+        <p class="presentacion">Unidad</p>
+        <p class="precio">$2.000</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Pulpa%20de%20fruta" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Pulpa de fruta" data-precio="2000">🛒 Añadir al carrito</button>
+        </div></div>
+        <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/guanabana.jpg" alt="Guanabana" loading="lazy">
+        </div>
+        <h4>Guanabana</h4>
+        <p class="presentacion">Libra</p>
+        <p class="precio">$4.000</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Guanabana" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Guanabana" data-precio="4000">🛒 Añadir al carrito</button>
+        </div></div>
+        <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/mazorca.jpg" alt="Mazorca" loading="lazy">
+        </div>
+        <h4>Mazorca</h4>
+        <p class="presentacion">Paquete</p>
+        <p class="precio">$4.000</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Mazorca" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Mazorca" data-precio="4000">🛒 Añadir al carrito</button>
+        </div></div>
+
+
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN 2: VERDURAS Y HORTALIZAS (4 productos) ===== -->
+  <section class="subcategoria" id="verduras">
+    <h3>Verduras y hortalizas</h3>
+    <div class="grid-productos">
+
+      <!-- PRODUCTO 7: TOMATE -->
+      <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/tomate.jpg" alt="Tomate" loading="lazy">
+        </div>
+        <h4>Tomate</h4>
+        <p class="presentacion">Por libra</p>
+        <p class="precio">$2.000</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Tomate" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Tomate" data-precio="2000">🛒 Añadir al carrito</button>
+        </div></div>
+
+      <!-- PRODUCTO 8: CEBOLLA -->
+      <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/cebolla-larga.jpg" alt="Cebolla larga" loading="lazy">
+        </div>
+        <h4>Cebolla larga</h4>
+        <p class="presentacion">Por libra</p>
+        <p class="precio">$2.000</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Cebolla%20larga" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Cebolla larga" data-precio="2000">🛒 Añadir al carrito</button>
+        </div></div>
+    <!-- PRODUCTO 8: CEBOLLA corta   -->
+      <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/cebolla-roja-y-blanca.jpg" alt="Cebolla cabezona" loading="lazy">
+        </div>
+        <h4>Cebolla cabezona</h4>
+        <p class="presentacion">Por libra</p>
+        <p class="precio">$2.000</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Cebolla%20cabezona" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Cebolla cabezona" data-precio="2000">🛒 Añadir al carrito</button>
+        </div></div>
+          <!-- PRODUCTO 5: PAPA -->
+      <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/papa.jpg" alt="Papa" loading="lazy">
+        </div>
+        <h4>Papa</h4>
+        <p class="presentacion">Por libra</p>
+        <p class="precio">$1.000</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Papa" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Papa" data-precio="1000">🛒 Añadir al carrito</button>
+        </div></div>
+
+      <!-- PRODUCTO 6: yuca -->
+      <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/yuca.jpg" alt="Yuca" loading="lazy">
+        </div>
+        <h4>Yuca</h4>
+        <p class="presentacion">Por libra</p>
+        
+        <p class="precio">$2.000</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Yuca" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Yuca" data-precio="2000">🛒 Añadir al carrito</button>
+        </div></div>
+
+      <!-- PRODUCTO 10: ZANAHORIA -->
+      <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/zanahoria.jpg" alt="Zanahoria" loading="lazy">
+        </div>
+        <h4>Zanahoria</h4>
+        <p class="presentacion">Por libra</p>
+        <p class="precio">$3.000</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Zanahoria" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Zanahoria" data-precio="3000">🛒 Añadir al carrito</button>
+        </div></div>
+
+      <!-- PRODUCTO 10: pimenton -->
+      <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/pimenton.jpg" alt="Pimentón" loading="lazy">
+        </div>
+        <h4>Pimentón</h4>
+        <p class="presentacion">Por libra</p>
+        <p class="precio">$2.500</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Piment%C3%B3n" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Pimentón" data-precio="2500">🛒 Añadir al carrito</button>
+        </div></div>
+<!-- PRODUCTO 10: lechuga -->
+      <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/lechuga.jpg" alt="Lechuga" loading="lazy">
+        </div>
+        <h4>Lechuga</h4>
+        <p class="presentacion">Unidad</p>
+        <p class="precio">$3.500</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Lechuga" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Lechuga" data-precio="3500">🛒 Añadir al carrito</button>
+        </div></div>
+     <!-- PRODUCTO 10: frijol -->
+      <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/frijol.jpg" alt="Frijol" loading="lazy">
+        </div>
+        <h4>Frijol</h4>
+        <p class="presentacion">Por libra</p>
+        <p class="precio">$5.500</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Frijol" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Frijol" data-precio="5500">🛒 Añadir al carrito</button>
+        </div></div> 
+       <!-- PRODUCTO 10: platano -->
+      <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/platano.jpg" alt="Plátano" loading="lazy">
+        </div>
+        <h4>Plátano</h4>
+        <p class="presentacion">Por libra</p>
+        <p class="precio">$4.000</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Pl%C3%A1tano" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Plátano" data-precio="4000">🛒 Añadir al carrito</button>
+        </div></div> 
+        <!-- PRODUCTO 10: arveja-->
+      <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/arveja.jpg" alt="Arveja" loading="lazy">
+        </div>
+        <h4>Arveja</h4>
+        <p class="presentacion">Por libra</p>
+        <p class="precio">$3.000</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Arveja" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Arveja" data-precio="3000">🛒 Añadir al carrito</button>
+        </div></div> 
+         <!-- PRODUCTO 10: arveja-->
+      <div class="producto">
+        <div class="foto-producto">
+          <img src="catalogo%20fruver/aguacate.jpg" alt="Aguacate" loading="lazy">
+        </div>
+        <h4>Aguacate</h4>
+        <p class="presentacion">Por libra</p>
+        <p class="precio">$8.000</p>
+        <div class="acciones">
+          <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Aguacate" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+          <button type="button" class="btn-pedir btn-carrito" data-nombre="Aguacate" data-precio="8000">🛒 Añadir al carrito</button>
+        </div></div> 
+    </div>
+  </section>
+
+  <!-- ===== AVISO FINAL ===== -->
+  <section class="aviso-catalogo">
+    <p>¿Buscas otra fruta o verdura? Escríbenos, te decimos qué hay fresco hoy.</p>
+    <div class="botones-banner">
+      <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20consultar%20qu%C3%A9%20hay%20fresco%20hoy" class="btn-banner" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
+      <a href="index.html" class="btn-banner btn-banner-claro">Volver al inicio</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== PIE DE PÁGINA ===== -->
+<footer>
+  <p>&copy; 2026 jhoans vargas · <a href="mailto:jhoanssantiago@gmail.com">NUESTRO CORREO</a></p>
+</footer>
+
+<!-- ===== CARRITO DE COMPRAS ===== -->
+<button type="button" class="btn-carrito-flotante" id="abrir-carrito" aria-label="Abrir carrito de compras">
+  🛒<span id="carrito-cantidad" class="carrito-cantidad" style="display:none">0</span>
+</button>
+<div class="carrito-fondo" id="carrito-fondo"></div>
+<aside class="carrito-panel" id="carrito-panel" aria-hidden="true" aria-label="Carrito de compras">
+  <div class="carrito-cabecera">
+    <h2>🛒 Tu pedido</h2>
+    <button type="button" id="carrito-cerrar" aria-label="Cerrar carrito">✕</button>
+  </div>
+  <p id="carrito-vacio" class="carrito-vacio">Tu carrito está vacío. Toca "Añadir" en los productos que quieras.</p>
+  <ul id="carrito-lista" class="carrito-lista"></ul>
+  <div id="carrito-pie" class="carrito-pie" style="display:none">
+    <p id="carrito-envio" class="carrito-envio"></p>
+    <p class="carrito-total">Total: <strong id="carrito-total">$0</strong></p>
+    <button type="button" id="carrito-enviar" class="carrito-enviar">Enviar pedido por WhatsApp</button>
+    <button type="button" id="carrito-vaciar" class="carrito-vaciar">Vaciar carrito</button>
+  </div>
+</aside>
+
+<!-- ===== BOTONES FLOTANTES ===== -->
+<a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20hacer%20un%20pedido" class="btn-whatsapp" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" width="32" height="32" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+<a href="https://www.facebook.com/profile.php?id=100066613130510" class="btn-facebook" target="_blank" rel="noopener" aria-label="Síguenos en Facebook">
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+</a>
+
+<script src="js/carrito.js" defer></script>
+</body>
+</html>

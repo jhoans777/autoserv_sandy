@@ -1,0 +1,729 @@
+/* =====================================================================
+   cssfr.css  |  FRUVER LA 33  |  Autoservicio Sandi J.V   (versión 3)
+   Es la única hoja de estilos de frutas.html.
+   Todo está bajo .pagina-fruver para no afectar las otras páginas.
+
+   Tomado de estilos.css como referencia (adaptado a verde):
+   - encabezado fijo (sticky) con franja de color abajo
+   - fondo con foto fija + capa semitransparente
+   - banner de domicilios, botones tipo "pastilla", pulso de WhatsApp
+   - carrusel de fotos solo con CSS (al final del archivo)
+
+   CAMBIOS DE ESTA VERSIÓN:
+   - Quedó UNA sola regla de fondo (.pagina-fruver::before): antes estaba repetida.
+   - Quedó UNA sola regla de "reducir movimiento": la vieja apagaba TODAS las animaciones
+     (animation: none !important) y por eso el carrusel no se movía.
+   ===================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&family=Poppins:wght@500;600;700;800&display=swap');
+
+/* ---------- 1. VARIABLES DE MARCA ---------- */
+.pagina-fruver {
+  --verde:          #07852B;
+  --verde-brillante:#16A63A;
+  --verde-oscuro:   #045D22;
+  --verde-suave:    #A8DB9A;
+  --verde-claro:    #E9F6E9;
+  --rojo:           #E50909;
+  --blanco:         #FFFFFF;
+  --negro:          #252525;
+
+  --radio-tarjeta: 16px;
+  --radio-boton:   10px;
+  --sombra:        0 4px 14px rgba(7, 133, 43, 0.15);
+  --sombra-hover:  0 10px 24px rgba(7, 133, 43, 0.28);
+  --transicion:    250ms ease;
+}
+
+/* ---------- 2. BASE + FONDO CON IMAGEN SEMITRANSPARENTE ---------- */
+html { scroll-behavior: smooth; }
+
+.pagina-fruver {
+  margin: 0;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--negro);
+  background: var(--verde-claro);   /* color de respaldo si no hay imagen */
+}
+
+/* ===== FONDO DEL FRUVER: el letrero, desvanecido (medio transparente) =====
+   Cómo funciona: se crea una capa invisible detrás de TODA la página (::before) con dos cosas apiladas:
+   1) una capa casi blanca semitransparente (el gradiente)  -> es la que "desvanece" la foto
+   2) la imagen del letrero (url)
+   INDICACIONES PARA AJUSTARLO:
+   - Los dos números 0.82 y 0.92 son la opacidad de la capa blanca (de 0 a 1).
+     Más BAJOS = la foto se ve MÁS (ej. 0.65 y 0.80).  Más ALTOS = la foto se ve MENOS (ej. 0.92 y 0.97).
+   - Si quieres la capa verdosa en vez de blanca, cambia rgba(255, 255, 255, ...) por rgba(233, 246, 233, ...).
+   - background-position: center  -> qué parte de la foto se ve. Prueba "left center" o "center top".
+   - Archivo: img/fondo-fruver.jpg  (el ../ sube de la carpeta css y entra a img). */
+.pagina-fruver::before { content: ""; position: fixed; inset: 0; z-index: -1; background-image: linear-gradient(rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.92)), url("../img/fondo-fruver.jpg"); background-size: cover; background-position: center; }
+
+.pagina-fruver *,
+.pagina-fruver *::before,
+.pagina-fruver *::after { box-sizing: border-box; }
+
+.pagina-fruver img { max-width: 100%; display: block; }
+
+.pagina-fruver a:focus-visible { outline: 3px solid var(--verde-oscuro); outline-offset: 2px; }
+
+.pagina-fruver main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+  background: transparent;
+}
+
+/* ---------- 3. ENCABEZADO (fijo) : logo | marca | menú | MAPA a la derecha ---------- */
+.pagina-fruver header {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "logo marca mapa"
+    "menu menu  menu";
+  align-items: center;
+  column-gap: 12px;
+  row-gap: 8px;
+  padding: 10px 5%;
+  background: var(--verde);
+  color: var(--blanco);
+  border-bottom: 4px solid var(--verde-suave);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.22);
+  text-align: left;
+}
+
+.pagina-fruver .logo-header {
+  grid-area: logo;
+  width: auto;
+  height: 54px;
+  max-width: 130px;
+  object-fit: contain;
+  padding: 3px;
+  background: var(--blanco);
+  border-radius: 12px;
+}
+
+.pagina-fruver .marca { grid-area: marca; min-width: 0; }
+
+.pagina-fruver header h1 {
+  grid-area: auto;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.1rem, 4.5vw, 1.8rem);
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+  color: var(--blanco);
+}
+
+.pagina-fruver header p {
+  grid-area: auto;
+  margin: 2px 0 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.6rem, 2.4vw, 0.75rem);
+  letter-spacing: 2px;
+  color: var(--verde-claro);
+}
+
+/* Menú */
+.pagina-fruver nav {
+  grid-area: menu;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin: 0;
+}
+
+
+.pagina-fruver nav a {
+  padding: 8px 14px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: var(--blanco);
+  text-decoration: none;
+  border: 0;
+  border-radius: var(--radio-boton);
+  transition: background var(--transicion), color var(--transicion);
+}
+
+.pagina-fruver nav a:hover,
+.pagina-fruver nav a:focus-visible {
+  background: var(--blanco);
+  color: var(--verde);
+}
+
+/* MAPA: arriba a la derecha */
+.pagina-fruver .btn-mapa {
+  grid-area: mapa;
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--verde-oscuro);
+  text-decoration: none;
+  background: var(--blanco);
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  transition: transform var(--transicion), background var(--transicion);
+}
+
+.pagina-fruver .btn-mapa svg { width: 32px; height: 32px; flex-shrink: 0; }
+.pagina-fruver .btn-mapa span { display: none; }   /* en celular solo se ve el ícono */
+
+.pagina-fruver .btn-mapa:hover {
+  background: var(--verde-claro);
+  transform: translateY(-2px);
+}
+
+/* ---------- 4. BANNER DE DOMICILIOS (letras bien visibles) ---------- */
+.pagina-fruver .banner-domicilio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 16px;
+  padding: 12px 5%;
+  text-align: center;
+  color: var(--blanco);
+  background: var(--verde-oscuro);
+  border-bottom: 3px solid var(--verde-suave);
+}
+
+/* Pastilla blanca con letra roja: contraste alto sobre el verde */
+.pagina-fruver .etiqueta-domicilio {
+  padding: 6px 18px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--rojo);
+  background: var(--blanco);
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.pagina-fruver .banner-domicilio p {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--blanco);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.pagina-fruver .banner-domicilio strong {
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--verde-suave);
+}
+
+/* ---------- 5. PORTADA (letrero, opcional) ---------- */
+.pagina-fruver .portada-fruver {
+  margin: 20px 0 0;
+  overflow: hidden;
+  border-radius: var(--radio-tarjeta);
+  box-shadow: var(--sombra);
+  background: var(--blanco);
+}
+
+.pagina-fruver .imagen-portada {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* ---------- 6. INICIO: texto + ESPACIO PARA IMAGEN ---------- */
+.pagina-fruver .catalogo-intro {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  align-items: center;
+  margin: 24px 0 8px;
+  padding: 26px 20px;
+  text-align: center;
+  color: var(--blanco);
+  background: linear-gradient(135deg, var(--verde-oscuro), var(--verde) 60%, var(--verde-brillante));
+  border-radius: var(--radio-tarjeta);
+  box-shadow: var(--sombra);
+}
+
+.pagina-fruver .catalogo-intro h2 {
+  margin: 0 0 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 5vw, 2.3rem);
+  line-height: 1.15;
+  text-transform: none;
+  color: var(--blanco);
+}
+
+.pagina-fruver .catalogo-intro p {
+  margin: 0 auto 18px;
+  max-width: 520px;
+  font-size: 1.05rem;
+  color: var(--verde-claro);
+}
+
+/* Caja de la imagen del inicio. Archivo: img/fruver_inicio.jpg
+   Si todavía no existe, se ve un recuadro con el aviso "Aquí va tu imagen".
+   (Ahora el inicio usa el carrusel .slider; esta caja queda disponible si quieres una sola foto.) */
+.pagina-fruver .intro-imagen {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.15);
+  border: 4px solid var(--blanco);
+  border-radius: var(--radio-tarjeta);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.pagina-fruver .intro-imagen::before {
+  content: "📷 Aquí va tu imagen\A img/fruver_inicio.jpg";
+  position: absolute;
+  white-space: pre;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--blanco);
+}
+
+.pagina-fruver .intro-imagen img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* Índice */
+.pagina-fruver .indice {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagina-fruver .indice a {
+  padding: 10px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--verde);
+  text-decoration: none;
+  background: var(--blanco);
+  border: 2px solid var(--blanco);
+  border-radius: 999px;
+  transition: background var(--transicion), color var(--transicion), transform var(--transicion);
+}
+
+.pagina-fruver .indice a:hover,
+.pagina-fruver .indice a:focus-visible {
+  background: var(--verde-suave);
+  color: var(--verde-oscuro);
+  border-color: var(--verde-suave);
+  transform: translateY(-2px);
+}
+
+/* ---------- 7. SUBCATEGORÍAS ---------- */
+.pagina-fruver .subcategoria {
+  margin: 32px 0 0;
+  scroll-margin-top: 130px;
+}
+
+/* Título sobre una "etiqueta" blanca para que se lea bien sobre la foto de fondo */
+.pagina-fruver .subcategoria h3 {
+  display: inline-block;
+  margin: 0 0 18px;
+  padding: 8px 18px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--verde-oscuro);
+  background: rgba(255, 255, 255, 0.92);
+  border-left: 6px solid var(--verde);
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+}
+
+/* ---------- 8. CUADRÍCULA DE PRODUCTOS ---------- */
+.pagina-fruver .grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 20px;
+}
+
+/* ---------- 9. TARJETA DE PRODUCTO ---------- */
+.pagina-fruver .producto {
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  text-align: center;
+  background: var(--blanco);
+  border: 1px solid var(--verde-claro);
+  border-radius: var(--radio-tarjeta);
+  box-shadow: var(--sombra);
+  transition: transform var(--transicion), box-shadow var(--transicion);
+}
+
+.pagina-fruver .producto:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-hover);
+}
+
+.pagina-fruver .foto-producto {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  margin-bottom: 12px;
+  background: var(--verde-claro);
+  border-radius: 12px;
+}
+
+.pagina-fruver .foto-producto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  transition: transform 300ms ease;
+}
+
+.pagina-fruver .producto:hover .foto-producto img { transform: scale(1.06); }
+
+.pagina-fruver .producto h4 {
+  margin: 0 0 4px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--verde-oscuro);
+}
+
+.pagina-fruver .presentacion {
+  display: inline-block;
+  align-self: center;
+  margin: 0 0 8px;
+  padding: 2px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--verde-oscuro);
+  background: var(--verde-suave);
+  border-radius: 999px;
+}
+
+.pagina-fruver .precio {
+  margin: 0 0 14px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--verde);
+}
+
+.pagina-fruver .precio-anterior {
+  margin-right: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #8a8a8a;
+  text-decoration: line-through;
+}
+
+.pagina-fruver .etiqueta-promo {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 3px 10px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--blanco);
+  background: var(--rojo);
+  border-radius: 999px;
+}
+
+/* ---------- 10. BOTONES ---------- */
+.pagina-fruver .btn-pedir {
+  display: block;
+  margin-top: auto;
+  padding: 12px 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--blanco);
+  text-decoration: none;
+  background: var(--verde);
+  border: 2px solid var(--verde);
+  border-radius: var(--radio-boton);
+  transition: background var(--transicion), border-color var(--transicion), transform var(--transicion);
+}
+
+.pagina-fruver .btn-pedir:hover,
+.pagina-fruver .btn-pedir:focus-visible {
+  background: var(--verde-oscuro);
+  border-color: var(--verde-oscuro);
+  transform: translateY(-1px);
+}
+
+.pagina-fruver .btn-pedir:active { transform: scale(0.98); }
+
+.pagina-fruver .btn-promo { background: var(--rojo); border-color: var(--rojo); }
+.pagina-fruver .btn-promo:hover { background: #b80707; border-color: #b80707; }
+
+/* ---------- 11. AVISO FINAL ---------- */
+.pagina-fruver .aviso-catalogo {
+  margin-top: 40px;
+  padding: 28px 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px dashed var(--verde-suave);
+  border-radius: var(--radio-tarjeta);
+}
+
+.pagina-fruver .aviso-catalogo p {
+  margin: 0 0 18px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--verde-oscuro);
+}
+
+.pagina-fruver .botones-banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 0;
+}
+
+/* Botones tipo "pastilla" (como en estilos.css) */
+.pagina-fruver .btn-banner {
+  padding: 12px 24px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--blanco);
+  text-decoration: none;
+  background: var(--verde);
+  border: 2px solid var(--verde);
+  border-radius: 999px;
+  transition: background var(--transicion), color var(--transicion), transform var(--transicion);
+}
+
+.pagina-fruver .btn-banner:hover {
+  background: var(--verde-oscuro);
+  border-color: var(--verde-oscuro);
+  transform: translateY(-2px);
+}
+
+.pagina-fruver .btn-banner-claro {
+  color: var(--verde);
+  background: var(--blanco);
+  border-color: var(--verde);
+}
+
+.pagina-fruver .btn-banner-claro:hover {
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+  border-color: var(--verde);
+}
+
+/* ---------- 12. PIE DE PÁGINA ---------- */
+.pagina-fruver footer {
+  padding: 22px 5%;
+  text-align: center;
+  color: var(--blanco);
+  background: var(--verde-oscuro);
+  border-top: 4px solid var(--verde-suave);
+}
+
+.pagina-fruver footer p { margin: 0; font-size: 0.9rem; }
+
+.pagina-fruver footer a {
+  font-weight: 700;
+  color: var(--verde-suave);
+  text-decoration: none;
+}
+.pagina-fruver footer a:hover { color: var(--blanco); text-decoration: underline; }
+
+/* ---------- 13. BOTONES FLOTANTES ---------- */
+.pagina-fruver .btn-whatsapp,
+.pagina-fruver .btn-facebook {
+  position: fixed;
+  right: 16px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform var(--transicion);
+}
+
+.pagina-fruver .btn-whatsapp { bottom: 16px; background: #25D366; animation: pulso-fruver 2s infinite; }
+.pagina-fruver .btn-facebook { bottom: 86px; background: #1877F2; }
+
+.pagina-fruver .btn-whatsapp:hover,
+.pagina-fruver .btn-facebook:hover { transform: scale(1.1); }
+
+@keyframes pulso-fruver {
+  0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+  70%  { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* ---------- 14. RESPONSIVE ---------- */
+
+/* Celulares grandes en adelante: se ve el texto "Cómo llegar" junto al mapa */
+@media (min-width: 480px) {
+  .pagina-fruver .btn-mapa { padding: 5px 16px 5px 8px; }
+  .pagina-fruver .btn-mapa span { display: inline; }
+}
+
+/* Tablets y computador */
+@media (min-width: 800px) {
+  /* Encabezado en una sola fila: logo | marca | menú | mapa (derecha) */
+  .pagina-fruver header {
+    grid-template-columns: auto auto 1fr auto;
+    grid-template-areas: "logo marca menu mapa";
+    column-gap: 20px;
+  }
+  .pagina-fruver .logo-header { height: 62px; }
+  .pagina-fruver nav { justify-content: flex-end; gap: 6px 10px; }
+  .pagina-fruver nav a { font-size: 0.9rem; }
+
+  /* Inicio: texto a la izquierda, imagen a la derecha */
+  .pagina-fruver .catalogo-intro {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 36px;
+    padding: 36px;
+    text-align: left;
+  }
+  .pagina-fruver .catalogo-intro p { margin-left: 0; }
+  .pagina-fruver .indice { justify-content: flex-start; }
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+  .pagina-fruver .grid-productos { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+}
+
+/* Celulares */
+@media (max-width: 640px) {
+  .pagina-fruver nav a { flex: 1 1 28%; text-align: center; padding: 10px 6px; }
+
+  .pagina-fruver .grid-productos { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .pagina-fruver .producto { padding: 10px; }
+  .pagina-fruver .producto h4 { font-size: 1rem; }
+  .pagina-fruver .precio { font-size: 1.25rem; }
+  .pagina-fruver .btn-pedir { padding: 12px 8px; }
+
+  .pagina-fruver .btn-whatsapp,
+  .pagina-fruver .btn-facebook { width: 52px; height: 52px; right: 12px; }
+  .pagina-fruver .btn-facebook { bottom: 78px; }
+}
+
+/* ---------- 15. "REDUCIR MOVIMIENTO" (accesibilidad) ----------
+   Si la persona tiene desactivadas las animaciones del sistema, se apagan los efectos de pasar el mouse
+   y el pulso de WhatsApp. NO se apagan TODAS las animaciones (no uses "animation: none !important" sobre *),
+   porque el carrusel solo hace un desvanecido (sin movimiento) y dejaría de funcionar. */
+@media (prefers-reduced-motion: reduce) {
+  .pagina-fruver * { transition: none !important; }
+  .pagina-fruver .btn-whatsapp { animation: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* =====================================================================
+   DOS BOTONES POR PRODUCTO + CARRITO DE COMPRAS (verde)
+   ===================================================================== */
+.pagina-fruver .acciones { margin-top: auto; display: flex; flex-direction: column; gap: 6px; }
+.pagina-fruver .acciones .btn-pedir { margin-top: 0; width: 100%; text-align: center; cursor: pointer; font-family: 'Poppins', sans-serif; }
+.pagina-fruver .btn-comprar { background: #25D366; border-color: #25D366; }
+.pagina-fruver .btn-comprar:hover, .pagina-fruver .btn-comprar:focus-visible { background: #1da851; border-color: #1da851; }
+.pagina-fruver .acciones .btn-carrito { background: var(--blanco); color: var(--verde); border-color: var(--verde); padding: 10px 6px; font-size: 0.85rem; }
+.pagina-fruver .acciones .btn-carrito:hover, .pagina-fruver .acciones .btn-carrito:focus-visible { background: var(--verde); color: var(--blanco); border-color: var(--verde); }
+
+.pagina-fruver .btn-carrito-flotante { position: fixed; right: 16px; bottom: 156px; z-index: 1000; width: 58px; height: 58px; border: 0; cursor: pointer; font-size: 1.7rem; background: var(--verde); color: var(--blanco); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: transform var(--transicion); }
+.pagina-fruver .btn-carrito-flotante:hover { transform: scale(1.1); }
+.pagina-fruver .carrito-cantidad { position: absolute; top: -4px; right: -4px; min-width: 24px; height: 24px; padding: 0 5px; align-items: center; justify-content: center; font-family: 'Poppins', sans-serif; font-size: 0.8rem; font-weight: 700; background: #FFD500; color: var(--verde-oscuro); border-radius: 12px; border: 2px solid var(--blanco); }
+
+.pagina-fruver .carrito-fondo { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1100; display: none; }
+.pagina-fruver .carrito-fondo.abierto { display: block; }
+
+.pagina-fruver .carrito-panel { position: fixed; top: 0; right: 0; bottom: 0; width: min(400px, 100%); background: var(--blanco); z-index: 1200; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.3s ease; box-shadow: -4px 0 16px rgba(0,0,0,0.3); visibility: hidden; }
+.pagina-fruver .carrito-panel.abierto { transform: translateX(0); visibility: visible; }
+
+.pagina-fruver .carrito-cabecera { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; background: var(--verde); color: var(--blanco); border-bottom: 4px solid var(--verde-suave); }
+.pagina-fruver .carrito-cabecera h2 { margin: 0; font-family: 'Poppins', sans-serif; font-size: 1.2rem; color: var(--blanco); }
+.pagina-fruver .carrito-cabecera button { border: 0; background: none; color: var(--blanco); font-size: 1.4rem; cursor: pointer; }
+
+.pagina-fruver .carrito-vacio { padding: 30px 20px; text-align: center; color: #666; }
+.pagina-fruver .carrito-lista { list-style: none; margin: 0; padding: 0 14px; overflow-y: auto; flex: 1; }
+.pagina-fruver .carrito-lista li { display: flex; align-items: center; gap: 8px; padding: 12px 0; border-bottom: 1px solid var(--verde-claro); }
+.pagina-fruver .ci-info { flex: 1; display: flex; flex-direction: column; font-size: 0.9rem; color: var(--negro); }
+.pagina-fruver .ci-info span { font-size: 0.8rem; color: var(--verde-oscuro); }
+.pagina-fruver .ci-ctrl { display: flex; align-items: center; gap: 6px; }
+.pagina-fruver .ci-ctrl button { width: 28px; height: 28px; border: 0; border-radius: 50%; background: var(--verde); color: var(--blanco); font-size: 1rem; font-weight: bold; cursor: pointer; }
+.pagina-fruver .ci-ctrl span { min-width: 20px; text-align: center; font-weight: bold; }
+.pagina-fruver .ci-borrar { border: 0; background: none; cursor: pointer; font-size: 1.1rem; }
+
+.pagina-fruver .carrito-pie { padding: 14px 18px 18px; border-top: 2px solid var(--verde-claro); background: var(--verde-claro); }
+.pagina-fruver .carrito-envio { margin: 0 0 8px; font-size: 0.85rem; font-weight: bold; color: var(--verde-oscuro); }
+.pagina-fruver .carrito-total { margin: 0 0 12px; font-size: 1.15rem; color: var(--negro); }
+.pagina-fruver .carrito-enviar { display: block; width: 100%; padding: 13px; border: 0; border-radius: 8px; background: #25D366; color: var(--blanco); font-size: 1rem; font-weight: bold; cursor: pointer; font-family: 'Poppins', sans-serif; }
+.pagina-fruver .carrito-enviar:hover { background: #1da851; }
+.pagina-fruver .carrito-vaciar { display: block; width: 100%; margin-top: 8px; padding: 8px; border: 0; background: none; color: var(--verde-oscuro); text-decoration: underline; cursor: pointer; font-family: inherit; }
+
+@media (max-width: 640px) {
+  .pagina-fruver .btn-carrito-flotante { width: 52px; height: 52px; right: 12px; bottom: 144px; }
+}
+
+
+/* Caja del carrusel: proporción 4:3, borde blanco, esquinas redondeadas y fondo verde por si una foto tarda en cargar */
+.pagina-fruver .slider { position: relative; width: 100%; max-width: 520px; aspect-ratio: 4 / 3; margin: 0 auto; overflow: hidden; background: var(--verde-oscuro); border: 4px solid var(--blanco); border-radius: var(--radio-tarjeta); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); }
+/* Si el carrusel está dentro de .intro-imagen, esa caja ya tiene borde y esquinas: el carrusel solo la llena */
+.pagina-fruver .intro-imagen .slider { max-width: none; height: 100%; border: 0; border-radius: 0; box-shadow: none; }
+/* Todas las fotos empiezan invisibles, una encima de otra, y cada una repite la animación en bucle (por defecto: ciclo de 3 fotos = 12 s) */
+.pagina-fruver .slider img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; margin: 0; border: 0; border-radius: 0; object-fit: cover; opacity: 0; animation: fr-foto-3 12s infinite; }
+
+/* Cada foto arranca 4 segundos después de la anterior */
+.pagina-fruver .slider img:nth-child(1) { animation-delay: 0s; }
+.pagina-fruver .slider img:nth-child(2) { animation-delay: 4s; }
+.pagina-fruver .slider img:nth-child(3) { animation-delay: 8s; }
+.pagina-fruver .slider img:nth-child(4) { animation-delay: 12s; }
+.pagina-fruver .slider img:nth-child(5) { animation-delay: 16s; }
+.pagina-fruver .slider img:nth-child(6) { animation-delay: 20s; }
+.pagina-fruver .slider img:nth-child(7) { animation-delay: 24s; }
+.pagina-fruver .slider img:nth-child(8) { animation-delay: 28s; }
+.pagina-fruver .slider img:nth-child(9) { animation-delay: 32s; }
+.pagina-fruver .slider img:nth-child(10) { animation-delay: 36s; }
+
+/* Ciclo de cada cantidad de fotos: duración = 4 s x cantidad. Cada foto aparece, se queda ~4 s y se desvanece (el desvanecido dura ~0,6 s) */
+.pagina-fruver .slider.de-2 img { animation-name: fr-foto-2; animation-duration: 8s; }
+@keyframes fr-foto-2 { 0% { opacity: 0; } 7.5% { opacity: 1; } 50.0% { opacity: 1; } 57.5% { opacity: 0; } 100% { opacity: 0; } }
+@keyframes fr-foto-3 { 0% { opacity: 0; } 5.0% { opacity: 1; } 33.33% { opacity: 1; } 38.33% { opacity: 0; } 100% { opacity: 0; } }
+.pagina-fruver .slider.de-4 img { animation-name: fr-foto-4; animation-duration: 16s; }
+@keyframes fr-foto-4 { 0% { opacity: 0; } 3.75% { opacity: 1; } 25.0% { opacity: 1; } 28.75% { opacity: 0; } 100% { opacity: 0; } }
+.pagina-fruver .slider.de-5 img { animation-name: fr-foto-5; animation-duration: 20s; }
+@keyframes fr-foto-5 { 0% { opacity: 0; } 3.0% { opacity: 1; } 20.0% { opacity: 1; } 23.0% { opacity: 0; } 100% { opacity: 0; } }
+.pagina-fruver .slider.de-6 img { animation-name: fr-foto-6; animation-duration: 24s; }
+@keyframes fr-foto-6 { 0% { opacity: 0; } 2.5% { opacity: 1; } 16.67% { opacity: 1; } 19.17% { opacity: 0; } 100% { opacity: 0; } }
+.pagina-fruver .slider.de-7 img { animation-name: fr-foto-7; animation-duration: 28s; }
+@keyframes fr-foto-7 { 0% { opacity: 0; } 2.14% { opacity: 1; } 14.29% { opacity: 1; } 16.43% { opacity: 0; } 100% { opacity: 0; } }
+.pagina-fruver .slider.de-8 img { animation-name: fr-foto-8; animation-duration: 32s; }
+@keyframes fr-foto-8 { 0% { opacity: 0; } 1.88% { opacity: 1; } 12.5% { opacity: 1; } 14.38% { opacity: 0; } 100% { opacity: 0; } }
+.pagina-fruver .slider.de-9 img { animation-name: fr-foto-9; animation-duration: 36s; }
+@keyframes fr-foto-9 { 0% { opacity: 0; } 1.67% { opacity: 1; } 11.11% { opacity: 1; } 12.78% { opacity: 0; } 100% { opacity: 0; } }
+.pagina-fruver .slider.de-10 img { animation-name: fr-foto-10; animation-duration: 40s; }
+@keyframes fr-foto-10 { 0% { opacity: 0; } 1.5% { opacity: 1; } 10.0% { opacity: 1; } 11.5% { opacity: 0; } 100% { opacity: 0; } }

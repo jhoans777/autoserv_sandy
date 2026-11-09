@@ -1,0 +1,477 @@
+/* =====================================================================
+   cssfr.css  |  FRUVER LA 33  |  Autoservicio Sandi J.V
+   Va DESPUÉS de estilos.css para poder sobrescribirlo.
+   Todo está bajo .pagina-fruver para no afectar las otras páginas.
+   ===================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&family=Poppins:wght@500;600;700;800&display=swap');
+
+/* ---------- 1. VARIABLES DE MARCA ---------- */
+.pagina-fruver {
+  --verde:          #07852B;  /* institucional (dominante) */
+  --verde-brillante:#16A63A;  /* botones, hover, enlaces */
+  --verde-oscuro:   #045D22;  /* navbar, footer, encabezados */
+  --verde-suave:    #A8DB9A;  /* etiquetas, detalles */
+  --verde-claro:    #E9F6E9;  /* fondos de secciones */
+  --rojo:           #E50909;  /* solo promociones y detalles del logo */
+  --blanco:         #FFFFFF;
+  --negro:          #252525;
+
+  --radio-tarjeta: 16px;
+  --radio-boton:   10px;
+  --sombra:        0 4px 14px rgba(7, 133, 43, 0.12);
+  --sombra-hover:  0 10px 24px rgba(7, 133, 43, 0.25);
+  --transicion:    250ms ease;
+}
+
+/* ---------- 2. BASE ---------- */
+.pagina-fruver {
+  margin: 0;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--negro);
+  background: var(--verde-claro);
+  scroll-behavior: smooth;
+}
+
+html { scroll-behavior: smooth; }
+
+.pagina-fruver *,
+.pagina-fruver *::before,
+.pagina-fruver *::after { box-sizing: border-box; }
+
+.pagina-fruver img { max-width: 100%; display: block; }
+
+.pagina-fruver main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+}
+
+/* ---------- 3. ENCABEZADO / NAVBAR (verde, fijo al hacer scroll) ---------- */
+.pagina-fruver header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  padding: 10px 20px;
+  background: var(--verde);
+  color: var(--blanco);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+}
+
+.pagina-fruver .logo-header {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--blanco);
+}
+
+.pagina-fruver header h1 {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  color: var(--blanco);
+}
+
+.pagina-fruver header p {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: var(--verde-claro);
+}
+
+.pagina-fruver nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.pagina-fruver nav a {
+  padding: 10px 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--blanco);
+  text-decoration: none;
+  border-radius: var(--radio-boton);
+  transition: background var(--transicion), color var(--transicion);
+}
+
+.pagina-fruver nav a:hover,
+.pagina-fruver nav a:focus-visible {
+  background: var(--blanco);
+  color: var(--verde);
+  outline: none;
+}
+
+/* ---------- 4. BANNER DE DOMICILIOS ---------- */
+.pagina-fruver .banner-domicilio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 14px;
+  padding: 10px 16px;
+  background: var(--verde-oscuro);
+  color: var(--blanco);
+  text-align: center;
+}
+
+.pagina-fruver .banner-domicilio p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.pagina-fruver .etiqueta-domicilio {
+  padding: 4px 12px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--blanco);
+  background: var(--rojo);   /* promoción = rojo */
+  border-radius: 999px;
+}
+
+/* ---------- 5. PORTADA (letrero) ---------- */
+.pagina-fruver .portada-fruver {
+  margin: 20px 0;
+  overflow: hidden;
+  border-radius: var(--radio-tarjeta);
+  box-shadow: var(--sombra);
+  background: var(--blanco);
+}
+
+.pagina-fruver .imagen-portada {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+}
+
+/* ---------- 6. PRESENTACIÓN + ÍNDICE ---------- */
+.pagina-fruver .catalogo-intro {
+  margin: 24px 0 8px;
+  padding: 28px 20px;
+  text-align: center;
+  color: var(--blanco);
+  background: linear-gradient(135deg, var(--verde-oscuro), var(--verde) 60%, var(--verde-brillante));
+  border-radius: var(--radio-tarjeta);
+  box-shadow: var(--sombra);
+}
+
+.pagina-fruver .catalogo-intro h2 {
+  margin: 0 0 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  color: var(--blanco);
+}
+
+.pagina-fruver .catalogo-intro p {
+  margin: 0 auto 18px;
+  max-width: 560px;
+  color: var(--verde-claro);
+}
+
+.pagina-fruver .indice {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagina-fruver .indice a {
+  padding: 10px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--verde);
+  text-decoration: none;
+  background: var(--blanco);
+  border: 2px solid var(--blanco);
+  border-radius: var(--radio-boton);
+  transition: background var(--transicion), color var(--transicion), transform var(--transicion);
+}
+
+.pagina-fruver .indice a:hover,
+.pagina-fruver .indice a:focus-visible {
+  background: var(--verde-suave);
+  color: var(--verde-oscuro);
+  border-color: var(--verde-suave);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* ---------- 7. SUBCATEGORÍAS (Frutas / Verduras) ---------- */
+.pagina-fruver .subcategoria {
+  margin-top: 32px;
+  scroll-margin-top: 110px; /* para que el navbar fijo no tape el título al usar el índice */
+}
+
+.pagina-fruver .subcategoria h3 {
+  display: inline-block;
+  margin: 0 0 18px;
+  padding-bottom: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--verde-oscuro);
+  border-bottom: 4px solid var(--verde-suave);
+}
+
+/* ---------- 8. CUADRÍCULA DE PRODUCTOS (adaptable) ---------- */
+.pagina-fruver .grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 20px;
+}
+
+/* ---------- 9. TARJETA DE PRODUCTO ---------- */
+.pagina-fruver .producto {
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  text-align: center;
+  background: var(--blanco);
+  border: 1px solid var(--verde-claro);
+  border-radius: var(--radio-tarjeta);
+  box-shadow: var(--sombra);
+  transition: transform var(--transicion), box-shadow var(--transicion);
+}
+
+.pagina-fruver .producto:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-hover);
+}
+
+.pagina-fruver .foto-producto {
+  aspect-ratio: 1 / 1;        /* fotos cuadradas 600x600 */
+  overflow: hidden;
+  margin-bottom: 12px;
+  background: var(--verde-claro);
+  border-radius: 12px;
+}
+
+.pagina-fruver .foto-producto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.pagina-fruver .producto:hover .foto-producto img {
+  transform: scale(1.06);
+}
+
+.pagina-fruver .producto h4 {
+  margin: 0 0 4px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--verde-oscuro);
+}
+
+.pagina-fruver .presentacion {
+  display: inline-block;
+  align-self: center;
+  margin: 0 0 8px;
+  padding: 2px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--verde-oscuro);
+  background: var(--verde-suave);
+  border-radius: 999px;
+}
+
+.pagina-fruver .precio {
+  margin: 0 0 14px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--verde);
+}
+
+/* Si algún día quieres mostrar precio anterior tachado:
+   <span class="precio-anterior">$5.000</span> */
+.pagina-fruver .precio-anterior {
+  margin-right: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #8a8a8a;
+  text-decoration: line-through;
+}
+
+/* ---------- 10. BOTONES ---------- */
+/* Principal: "Pedir" */
+.pagina-fruver .btn-pedir {
+  display: block;
+  margin-top: auto;           /* empuja el botón al fondo de la tarjeta */
+  padding: 12px 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--blanco);
+  text-decoration: none;
+  background: var(--verde);
+  border: 2px solid var(--verde);
+  border-radius: var(--radio-boton);
+  transition: background var(--transicion), border-color var(--transicion), transform var(--transicion);
+}
+
+.pagina-fruver .btn-pedir:hover,
+.pagina-fruver .btn-pedir:focus-visible {
+  background: var(--verde-oscuro);
+  border-color: var(--verde-oscuro);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.pagina-fruver .btn-pedir:active { transform: scale(0.98); }
+
+/* Promoción (usar solo para ofertas): <a class="btn-pedir btn-promo"> */
+.pagina-fruver .btn-promo {
+  background: var(--rojo);
+  border-color: var(--rojo);
+}
+.pagina-fruver .btn-promo:hover { background: #b80707; border-color: #b80707; }
+
+/* Etiqueta roja de oferta sobre la foto (opcional):
+   <div class="foto-producto"><span class="etiqueta-promo">-20%</span> ... */
+.pagina-fruver .foto-producto { position: relative; }
+.pagina-fruver .etiqueta-promo {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 3px 10px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--blanco);
+  background: var(--rojo);
+  border-radius: 999px;
+}
+
+/* ---------- 11. AVISO FINAL + BOTONES ---------- */
+.pagina-fruver .aviso-catalogo {
+  margin-top: 40px;
+  padding: 28px 20px;
+  text-align: center;
+  background: var(--blanco);
+  border: 2px dashed var(--verde-suave);
+  border-radius: var(--radio-tarjeta);
+}
+
+.pagina-fruver .aviso-catalogo p {
+  margin: 0 0 18px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--verde-oscuro);
+}
+
+.pagina-fruver .botones-banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.pagina-fruver .btn-banner {
+  padding: 12px 24px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--blanco);
+  text-decoration: none;
+  background: var(--verde);
+  border: 2px solid var(--verde);
+  border-radius: var(--radio-boton);
+  transition: background var(--transicion), color var(--transicion);
+}
+
+.pagina-fruver .btn-banner:hover { background: var(--verde-oscuro); border-color: var(--verde-oscuro); }
+
+/* Secundario: fondo blanco, texto y borde verde */
+.pagina-fruver .btn-banner-claro {
+  color: var(--verde);
+  background: var(--blanco);
+  border-color: var(--verde);
+}
+.pagina-fruver .btn-banner-claro:hover { background: var(--verde-claro); color: var(--verde-oscuro); border-color: var(--verde); }
+
+/* ---------- 12. PIE DE PÁGINA ---------- */
+.pagina-fruver footer {
+  padding: 24px 16px;
+  text-align: center;
+  color: var(--blanco);
+  background: var(--verde-oscuro);
+}
+
+.pagina-fruver footer p { margin: 0; font-size: 0.9rem; }
+
+.pagina-fruver footer a {
+  font-weight: 700;
+  color: var(--verde-suave);
+  text-decoration: none;
+}
+.pagina-fruver footer a:hover { color: var(--blanco); text-decoration: underline; }
+
+/* ---------- 13. BOTONES FLOTANTES ---------- */
+.pagina-fruver .btn-whatsapp,
+.pagina-fruver .btn-facebook {
+  position: fixed;
+  right: 16px;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform var(--transicion);
+}
+
+.pagina-fruver .btn-whatsapp { bottom: 16px; background: #25D366; }
+.pagina-fruver .btn-facebook { bottom: 86px; background: #1877F2; }
+
+.pagina-fruver .btn-whatsapp:hover,
+.pagina-fruver .btn-facebook:hover { transform: scale(1.1); }
+
+/* ---------- 14. RESPONSIVE ---------- */
+/* Tablets */
+@media (max-width: 900px) {
+  .pagina-fruver .grid-productos { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+}
+
+/* Celulares */
+@media (max-width: 640px) {
+  .pagina-fruver header { justify-content: center; text-align: center; padding: 10px 12px; }
+  .pagina-fruver nav { margin-left: 0; width: 100%; justify-content: center; }
+  .pagina-fruver nav a { flex: 1 1 30%; text-align: center; padding: 12px 8px; }
+
+  .pagina-fruver .grid-productos { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .pagina-fruver .producto { padding: 10px; }
+  .pagina-fruver .producto h4 { font-size: 1rem; }
+  .pagina-fruver .precio { font-size: 1.25rem; }
+  .pagina-fruver .btn-pedir { padding: 12px 8px; }  /* cómodo para el dedo */
+
+  .pagina-fruver .btn-whatsapp,
+  .pagina-fruver .btn-facebook { width: 52px; height: 52px; right: 12px; }
+  .pagina-fruver .btn-facebook { bottom: 78px; }
+}
+
+/* Respeta a quien prefiere menos animaciones */
+@media (prefers-reduced-motion: reduce) {
+  .pagina-fruver * { transition: none !important; scroll-behavior: auto !important; }
+}

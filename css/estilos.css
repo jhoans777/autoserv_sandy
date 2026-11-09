@@ -1,0 +1,340 @@
+
+
+/* Hace que el ancho de las cajas incluya el relleno y el borde (evita que se desborden) */
+* { box-sizing: border-box; }
+/* Quita el margen del navegador y define letra, color de texto y fondo de toda la página */
+body { margin: 0; font-family: "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.5; color: #1A1A1A; background: #FAF3F3; }
+/* Foto del negocio como fondo de toda la página: queda fija al hacer scroll y desvanecida con una capa casi blanca (más clara abajo) para que no se vea sólida ni estorbe la lectura */
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; background-image: linear-gradient(rgba(250, 243, 243, 0.82), rgba(250, 243, 243, 0.94)), url("../img/negocio.jpg"); background-size: cover; background-position: center 30%; }
+/* Títulos: sin márgenes por defecto y en negrita fuerte */
+h1, h2, h3 { margin: 0; font-weight: 800; }
+/* Títulos de sección: grandes y en mayúsculas */
+h2 { font-size: 1.8rem; text-transform: uppercase; margin-bottom: 16px; }
+/* Subtítulos */
+h3 { font-size: 1.1rem; }
+/* Imágenes: nunca más anchas que su caja, proporcionales y con esquinas redondeadas */
+img { max-width: 100%; height: auto; border-radius: 12px; }
+/* Contorno visible al navegar con el teclado (accesibilidad) */
+a:focus-visible, button:focus-visible { outline: 3px solid #8F0410; outline-offset: 2px; }
+
+/* ===== ENCABEZADO (header) ===== */
+
+/* Barra roja oscura de arriba, FIJA: se queda pegada arriba (sticky) aunque bajes por la página. Usa grid: logo a la izquierda, nombre a la derecha; franja amarilla abajo */
+header { position: sticky; top: 0; z-index: 900; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); background: #B8050F; color: #fff; display: grid; grid-template-columns: auto 1fr auto; align-items: center; column-gap: 12px; text-align: left; padding: 14px 5%; border-bottom: 4px solid #FFD500; }
+/* OPCIONAL: si le pones class="con-imagen" al header, muestra una foto de fondo con capa roja encima */
+header.con-imagen { background-image: linear-gradient(rgba(184, 5, 15, 0.78), rgba(184, 5, 15, 0.78)), url("../img/fachada.jpg"); background-size: cover; background-position: center; padding: 70px 5%; }
+/* Nombre del negocio: letra Lobster, en la columna 2 (al lado del logo) */
+header h1 { grid-column: 2; font-family: "Lobster", "Brush Script MT", cursive; font-weight: normal; font-size: 1.3rem; letter-spacing: 1px; }
+/* Logo del header: columna 1, ocupa 2 filas, recortado a una franja para mostrar solo el texto */
+.logo-header { grid-column: 1; grid-row: 1 / span 2; display: block; width: 110px; height: 34px; object-fit: cover; margin: 0; background: #fff; border-radius: 10px; }
+/* Subtítulo "Supermercado y fruver": pequeño, amarillo, debajo del nombre */
+header p { grid-column: 2; margin: 0; color: #FFD500; font-size: 0.65rem; font-weight: bold; letter-spacing: 2px; }
+/* Menú de navegación: ocupa todo el ancho, en fila y centrado (se parte en varias líneas si no cabe) */
+nav { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 20px; margin-top: 10px; }
+/* Enlaces del menú: blancos, en negrita, sin subrayado */
+nav a { color: #fff; font-size: 0.85rem; font-weight: bold; text-decoration: none; padding: 4px 0; border-bottom: 2px solid transparent; }
+/* Al pasar el mouse: el enlace se pone amarillo y aparece una línea debajo */
+nav a:hover { color: #FFD500; border-bottom-color: #FFD500; }
+/* Botón del mapa: pastilla blanca arriba a la derecha del encabezado (columna 3, ocupa las 2 filas) */
+.btn-mapa { grid-column: 3; grid-row: 1 / span 2; justify-self: end; display: flex; align-items: center; gap: 6px; padding: 5px 8px; font-weight: bold; font-size: 0.8rem; color: #B8050F; text-decoration: none; background: #fff; border-radius: 999px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25); transition: transform 0.2s ease; }
+/* Ícono del mapa */
+.btn-mapa svg { width: 32px; height: 32px; flex-shrink: 0; }
+/* En celular solo se ve el ícono; el texto "Cómo llegar" aparece desde 480px */
+.btn-mapa span { display: none; }
+/* Al pasar el mouse el botón sube un poco */
+.btn-mapa:hover { transform: translateY(-2px); }
+@media (min-width: 480px) {
+  .btn-mapa { padding: 5px 16px 5px 8px; }
+  .btn-mapa span { display: inline; }
+}
+
+/* ===== BANNER DE DOMICILIOS GRATIS (franja debajo del encabezado) ===== */
+
+/* Franja roja a todo el ancho con el mensaje centrado; en pantallas pequeñas se parte en dos líneas */
+.banner-domicilio { background: #E30613; color: #fff; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 16px; padding: 12px 5%; text-align: center; }
+/* Etiqueta tipo "pastilla": fondo blanco, texto rojo y bordes muy redondos */
+.etiqueta-domicilio { background: #fff; color: #B8050F; font-weight: 800; font-size: 1.1rem; padding: 6px 18px; border-radius: 999px; }
+/* Texto que acompaña la etiqueta */
+.banner-domicilio p { margin: 0; font-size: 1rem; }
+/* El monto resaltado en amarillo y un poco más grande */
+.banner-domicilio strong { color: #FFD500; font-size: 1.3rem; }
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+
+/* Centra el contenido y limita su ancho a 1100px */
+main { max-width: 1100px; margin: 0 auto; padding: 24px 16px; }
+/* Separación entre una sección y la siguiente */
+section { margin-bottom: 40px; }
+
+/* ===== SECCIÓN "AUTOSERVICIO" (banner rojo) ===== */
+
+/* Banner: degradado de rojo con un círculo amarillo arriba a la derecha y uno blanco translúcido abajo a la izquierda */
+#sobre-mi { background: radial-gradient(circle at 100% 0, #FFD500 0 80px, transparent 81px), radial-gradient(circle at 0 100%, rgba(255, 255, 255, 0.15) 0 70px, transparent 71px), linear-gradient(135deg, #E30613, #A5040F); color: #fff; text-align: center; border-radius: 16px; padding: 32px 20px; }
+/* Título del banner en blanco */
+#sobre-mi h2 { color: #fff; font-size: 2rem; }
+/* Texto resaltado (<strong>) en amarillo */
+#sobre-mi strong { color: #FFD500; }
+/* Párrafo del banner */
+#sobre-mi p { font-size: 1.1rem; margin: 0 0 16px 0; }
+/* Título "Servicios": pequeño, amarillo y con letras separadas */
+#sobre-mi h3 { color: #FFD500; text-transform: uppercase; font-size: 0.95rem; letter-spacing: 2px; margin-bottom: 10px; }
+/* Foto suelta del banner (si algún día usas una sola imagen sin carrusel): recortada, con borde amarillo */
+#sobre-mi img { display: block; width: 100%; max-width: 380px; height: 240px; object-fit: cover; margin: 0 auto 20px auto; border: 3px solid #FFD500; border-radius: 16px; }
+/* Lista de servicios: sin viñetas, en fila y centrada */
+#sobre-mi ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+/* Cada servicio es una "etiqueta" blanca con texto rojo y bordes muy redondos */
+#sobre-mi li { background: #fff; color: #B8050F; border-radius: 999px; padding: 6px 16px; font-size: 0.85rem; font-weight: bold; }
+
+/* ===== CARRUSEL DE FOTOS SOLO CON CSS (sin JavaScript) =====
+   Por defecto: 3 fotos, 4 segundos cada una (ciclo de 12s).
+   Si pones 4 o 5 fotos en el HTML, agrega la clase: <div class="slider de-4"> o <div class="slider de-5"> */
+
+/* Caja del carrusel: tamaño, borde amarillo y fondo rojo por si una foto tarda en cargar */
+#sobre-mi .slider { position: relative; width: 100%; max-width: 380px; height: 240px; margin: 0 auto 20px auto; border: 3px solid #FFD500; border-radius: 16px; overflow: hidden; background: #8F0410; }
+
+/* Todas las fotos empiezan invisibles, una encima de otra */
+#sobre-mi .slider img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; margin: 0; border: 0; border-radius: 0; object-fit: cover; opacity: 0; animation: cambiar-foto 12s infinite; }
+
+/* Cada foto arranca 4s después de la anterior */
+#sobre-mi .slider img:nth-child(1) { animation-delay: 0s; }
+#sobre-mi .slider img:nth-child(2) { animation-delay: 4s; }
+#sobre-mi .slider img:nth-child(3) { animation-delay: 8s; }
+#sobre-mi .slider img:nth-child(4) { animation-delay: 12s; }
+#sobre-mi .slider img:nth-child(5) { animation-delay: 16s; }
+
+/* 3 fotos: aparece (0-5%), se queda hasta el 33% y se desvanece (33-38%) */
+@keyframes cambiar-foto {
+  0%   { opacity: 0; }
+  5%   { opacity: 1; }
+  33%  { opacity: 1; }
+  38%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* 4 fotos (ciclo de 16s) */
+#sobre-mi .slider.de-4 img { animation-name: cambiar-foto-4; animation-duration: 16s; }
+@keyframes cambiar-foto-4 {
+  0%   { opacity: 0; }
+  4%   { opacity: 1; }
+  25%  { opacity: 1; }
+  29%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* 5 fotos (ciclo de 20s) */
+#sobre-mi .slider.de-5 img { animation-name: cambiar-foto-5; animation-duration: 20s; }
+@keyframes cambiar-foto-5 {
+  0%   { opacity: 0; }
+  3%   { opacity: 1; }
+  20%  { opacity: 1; }
+  24%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+
+/* Contenedor de los dos botones del banner: en fila, centrados (se parten en líneas si no caben) */
+.botones-banner { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 20px; }
+/* Botón principal del banner: amarillo con texto oscuro y bordes muy redondos */
+.btn-banner { background: #FFD500; color: #1A1A1A; text-decoration: none; font-weight: bold; padding: 12px 24px; border-radius: 999px; transition: transform 0.2s ease; }
+/* Segundo botón: versión blanca con texto rojo (va después para sobrescribir el fondo amarillo) */
+.btn-banner-claro { background: #fff; color: #B8050F; }
+/* Al pasar el mouse los botones suben un poco */
+.btn-banner:hover { transform: translateY(-2px); }
+
+/* ===== SECCIÓN "TIENDA VIRTUAL" (catálogo) ===== */
+
+/* Centra el texto de toda la sección */
+#catalogo { text-align: center; }
+/* Título con subrayado amarillo */
+#catalogo h2 { display: inline-block; font-size: 1.8rem; border-bottom: 4px solid #FFD500; padding-bottom: 4px; margin-bottom: 8px; }
+/* Frase debajo del título (gris, pequeña) */
+.subtitulo { color: #666; font-size: 0.95rem; margin: 0 0 24px 0; }
+/* Cuadrícula de tarjetas: se acomoda sola, cada tarjeta mide mínimo 180px */
+.grid-categorias { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+/* Tarjeta de categoría: caja blanca con borde suave y sombra; contenido en columna */
+.card-categoria { background: #fff; border: 1px solid #EBD9D9; border-radius: 12px; padding: 20px 14px 14px 14px; box-shadow: 0 2px 8px rgba(143, 4, 16, 0.07); display: flex; flex-direction: column; justify-content: space-between; align-items: center; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+/* Al pasar el mouse: la tarjeta sube un poco y la sombra crece */
+.card-categoria:hover { transform: translateY(-4px); box-shadow: 0 8px 18px rgba(143, 4, 16, 0.18); }
+/* Emojis de la tarjeta (ícono grande) */
+.card-categoria .icono { font-size: 3.2rem; margin-bottom: 8px; }
+/* Logo dentro de la tarjeta de categoría: tamaño controlado y centrado */
+.card-categoria .logo-card { width: 100%; max-width: 180px; height: auto; margin-bottom: 8px; border-radius: 0; }
+/* Nombre de la categoría */
+.card-categoria h3 { font-size: 1rem; text-transform: uppercase; margin-bottom: 6px; }
+/* Descripción corta de la categoría */
+.card-categoria p { font-size: 0.85rem; color: #666; margin: 0 0 16px 0; }
+/* Botón "Ver catálogo": rojo, ocupa todo el ancho de la tarjeta */
+.btn-catalogo { display: block; width: 100%; background: #E30613; color: #fff; text-align: center; text-decoration: none; padding: 9px 0; border-radius: 6px; font-weight: bold; font-size: 0.85rem; text-transform: uppercase; transition: background 0.2s ease; }
+/* Al pasar el mouse el botón se oscurece */
+.btn-catalogo:hover { background: #8F0410; }
+
+/* ===== SECCIÓN "VÍVERES Y GRANOS" (catálogo con productos, mismo estilo del fruver pero en rojo) =====
+   Todas las reglas empiezan con .cat-seccion, así que NO afectan a las demás páginas (ni al fruver). */
+
+/* CATÁLOGO OCULTO: la sección no se ve hasta que se pulsa un enlace que apunte a ella (href="#viveres", "#licores", "#lacteos", "#aseo").
+   Se queda abierta aunque se pulsen los botones internos (Granos, Abarrotes) y se cierra con href="#catalogo". */
+.cat-seccion { display: none; scroll-margin-top: 90px; }
+.cat-seccion:target { display: block; }
+/* Regla aparte a propósito: si un navegador viejo no entiende :has, solo ignora esta y no rompe la anterior */
+.cat-seccion:has(:target) { display: block; }
+/* Botón "Cerrar catálogo" de arriba: pastilla blanca con borde rojo, alineada a la derecha */
+.cat-seccion .viv-cerrar { display: block; width: fit-content; margin: 0 0 12px auto; padding: 6px 16px; font-size: 0.85rem; font-weight: bold; color: #B8050F; text-decoration: none; background: #fff; border: 2px solid #E30613; border-radius: 999px; transition: background 0.2s ease, color 0.2s ease; }
+.cat-seccion .viv-cerrar:hover { background: #E30613; color: #fff; }
+
+/* Inicio: banner rojo igual al de #sobre-mi, con el texto y un espacio para imagen */
+.cat-seccion .viv-intro { display: grid; grid-template-columns: 1fr; gap: 22px; align-items: center; text-align: center; color: #fff; background: radial-gradient(circle at 100% 0, #FFD500 0 80px, transparent 81px), radial-gradient(circle at 0 100%, rgba(255, 255, 255, 0.15) 0 70px, transparent 71px), linear-gradient(135deg, #E30613, #A5040F); border-radius: 16px; padding: 28px 20px; }
+/* Título del inicio */
+.cat-seccion .viv-intro h2 { color: #fff; margin-bottom: 8px; font-size: clamp(1.5rem, 5vw, 2.2rem); line-height: 1.15; }
+/* Frase del inicio */
+.cat-seccion .viv-intro p { margin: 0 auto 18px; max-width: 520px; font-size: 1.05rem; }
+/* Caja de la imagen del inicio (archivo: img/viveres/xxx_inicio.jpg). Si no existe, se ve el aviso "Aquí va tu imagen" */
+.cat-seccion .viv-imagen { position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 4 / 3; overflow: hidden; background: rgba(255, 255, 255, 0.15); border: 3px solid #FFD500; border-radius: 16px; }
+.cat-seccion .viv-imagen::before { content: "📷 Aquí va tu imagen"; position: absolute; white-space: pre; text-align: center; font-size: 0.9rem; color: #fff; }
+.cat-seccion .viv-imagen img { position: relative; width: 100%; height: 100%; object-fit: cover; border-radius: 0; }
+/* Índice: botones blancos que saltan a cada subcategoría */
+.cat-seccion .viv-indice { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.cat-seccion .viv-indice a { padding: 8px 18px; font-weight: bold; font-size: 0.85rem; color: #B8050F; text-decoration: none; background: #fff; border-radius: 999px; transition: transform 0.2s ease, background 0.2s ease; }
+.cat-seccion .viv-indice a:hover { background: #FFD500; color: #1A1A1A; transform: translateY(-2px); }
+
+/* Subcategorías (Granos, Abarrotes...): título en etiqueta blanca con borde rojo y amarillo */
+.cat-seccion .viv-sub { margin-top: 32px; scroll-margin-top: 110px; }
+.cat-seccion .viv-sub h3 { display: inline-block; margin: 0 0 18px; padding: 8px 18px; font-size: 1.2rem; text-transform: uppercase; color: #8F0410; background: rgba(255, 255, 255, 0.92); border-left: 6px solid #E30613; border-bottom: 3px solid #FFD500; border-radius: 10px; box-shadow: 0 2px 8px rgba(143, 4, 16, 0.12); }
+
+/* Cuadrícula de productos: se acomoda sola, cada tarjeta mide mínimo 190px */
+.cat-seccion .grid-productos { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 18px; }
+/* Tarjeta de producto: igual a las tarjetas de categoría (blanca, borde suave, sube al pasar el mouse) */
+.cat-seccion .producto { display: flex; flex-direction: column; padding: 14px; text-align: center; background: #fff; border: 1px solid #EBD9D9; border-radius: 12px; box-shadow: 0 2px 8px rgba(143, 4, 16, 0.07); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.cat-seccion .producto:hover { transform: translateY(-4px); box-shadow: 0 8px 18px rgba(143, 4, 16, 0.18); }
+/* Foto cuadrada (recomendado 600 x 600 px) */
+.cat-seccion .foto-producto { aspect-ratio: 1 / 1; overflow: hidden; margin-bottom: 12px; background: #FBE3E3; border-radius: 10px; }
+.cat-seccion .foto-producto img { width: 100%; height: 100%; object-fit: cover; border-radius: 0; transition: transform 0.3s ease; }
+.cat-seccion .producto:hover .foto-producto img { transform: scale(1.06); }
+/* Nombre del producto */
+.cat-seccion .producto h4 { margin: 0 0 4px; font-size: 1.05rem; font-weight: 800; color: #8F0410; }
+/* Presentación (libra, kilo, unidad...): etiqueta suave */
+.cat-seccion .presentacion { display: inline-block; align-self: center; margin: 0 0 8px; padding: 2px 12px; font-size: 0.8rem; font-weight: bold; color: #8F0410; background: #FBE3E3; border-radius: 999px; }
+/* Precio destacado en rojo */
+.cat-seccion .precio { margin: 0 0 14px; font-size: 1.45rem; font-weight: 800; color: #E30613; }
+/* Botón "Pedir": rojo, ancho completo, se oscurece al pasar el mouse */
+.cat-seccion .btn-pedir { display: block; margin-top: auto; padding: 10px 0; color: #fff; text-align: center; text-decoration: none; font-weight: bold; font-size: 0.85rem; text-transform: uppercase; background: #E30613; border-radius: 6px; transition: background 0.2s ease; }
+.cat-seccion .btn-pedir:hover { background: #8F0410; }
+
+/* Aviso final: "¿No encuentras tu producto?" */
+/* Nota legal (ej. venta de licores solo a mayores de 18) */
+.cat-seccion .viv-nota { margin: 0 0 16px; padding: 10px 14px; font-size: 0.9rem; font-weight: bold; color: #8F0410; background: rgba(255, 255, 255, 0.92); border-left: 4px solid #E30613; border-radius: 8px; }
+
+.cat-seccion .viv-aviso { margin-top: 40px; padding: 26px 20px; text-align: center; background: rgba(255, 255, 255, 0.95); border: 2px dashed #EBD9D9; border-radius: 16px; }
+.cat-seccion .viv-aviso p { margin: 0 0 16px; font-size: 1.05rem; font-weight: bold; color: #8F0410; }
+/* Los botones del aviso van centrados (en pantallas grandes la regla general los alinea a la izquierda) */
+.cat-seccion .botones-banner { justify-content: center; margin-top: 0; }
+
+/* Víveres en pantallas grandes: texto a la izquierda, imagen a la derecha */
+@media (min-width: 700px) {
+  .cat-seccion .viv-intro { grid-template-columns: 1.1fr 0.9fr; gap: 36px; padding: 36px; text-align: left; }
+  .cat-seccion .viv-intro p { margin-left: 0; }
+  .cat-seccion .viv-indice { justify-content: flex-start; }
+}
+
+/* Víveres en celulares: 2 productos por fila */
+@media (max-width: 640px) {
+  .cat-seccion .grid-productos { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .cat-seccion .producto { padding: 10px; }
+  .cat-seccion .precio { font-size: 1.2rem; }
+}
+
+/* ===== PIE DE PÁGINA (footer) ===== */
+
+/* Barra roja muy oscura con franja amarilla arriba */
+footer { background: #8F0410; color: #fff; text-align: center; padding: 22px 5%; border-top: 4px solid #FFD500; }
+/* Quita el margen del párrafo del pie */
+footer p { margin: 0; }
+/* Enlace del correo en amarillo */
+footer a { color: #FFD500; font-weight: bold; }
+
+/* ===== BOTONES FLOTANTES (siempre visibles en la esquina) ===== */
+
+/* WhatsApp: círculo verde fijo abajo a la derecha, con efecto de pulso */
+.btn-whatsapp { position: fixed; right: 20px; bottom: 20px; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000; animation: pulso 2s infinite; transition: transform 0.2s ease; }
+/* Al pasar el mouse el botón se agranda */
+.btn-whatsapp:hover { transform: scale(1.1); }
+/* Animación "pulso": una onda verde que crece y se desvanece */
+@keyframes pulso { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); } 70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+/* Facebook: círculo azul justo encima del de WhatsApp (20px + 60px + 10px = 90px del borde) */
+.btn-facebook { position: fixed; right: 20px; bottom: 90px; width: 60px; height: 60px; background: #1877F2; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000; transition: transform 0.2s ease; }
+/* Al pasar el mouse el botón se agranda */
+.btn-facebook:hover { transform: scale(1.1); }
+
+/* ===== PANTALLAS GRANDES (computador y tablet, desde 700px de ancho) ===== */
+
+@media (min-width: 700px) {
+  /* Header en 4 columnas: logo | nombre | menú | mapa */
+  header { grid-template-columns: auto auto 1fr auto; column-gap: 20px; }
+  /* Logo más grande */
+  .logo-header { width: 160px; height: 50px; }
+  /* Nombre más grande */
+  header h1 { font-size: 1.9rem; }
+  /* Subtítulo un poco más grande */
+  header p { font-size: 0.7rem; }
+  /* Menú a la derecha, en la tercera columna */
+  nav { grid-column: 3; grid-row: 1 / span 2; justify-content: flex-end; margin-top: 0; gap: 6px 28px; }
+  /* El mapa pasa a la cuarta columna, a la derecha del menú */
+  .btn-mapa { grid-column: 4; }
+  /* Banner en 2 columnas: texto a la izquierda, fotos a la derecha */
+  #sobre-mi { display: grid; grid-template-columns: 1fr 1fr; column-gap: 32px; align-items: center; text-align: left; padding: 40px; }
+  /* Todo el texto del banner va en la columna izquierda */
+  #sobre-mi > * { grid-column: 1; }
+  /* La imagen suelta va en la columna derecha, ocupando varias filas */
+  #sobre-mi img { grid-column: 2; grid-row: 1 / span 5; height: 300px; max-width: 420px; margin: 0 auto; }
+  /* El carrusel va en la columna derecha, igual que la imagen suelta */
+  #sobre-mi .slider { grid-column: 2; grid-row: 1 / span 5; height: 300px; max-width: 420px; margin: 0 auto; }
+  /* Las etiquetas de servicios se alinean a la izquierda */
+  #sobre-mi ul { justify-content: flex-start; }
+  /* Los botones del banner se alinean a la izquierda */
+  .botones-banner { justify-content: flex-start; }
+}
+
+
+/* ============================================================
+   CARRITO DE COMPRAS
+   ============================================================ */
+.cat-seccion button.btn-pedir { width: 100%; border: 0; cursor: pointer; font-family: inherit; }
+
+.btn-carrito-flotante { position: fixed; right: 20px; bottom: 160px; width: 60px; height: 60px; border: 0; cursor: pointer; font-size: 1.7rem; background: #E30613; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000; transition: transform 0.2s ease; }
+.btn-carrito-flotante:hover { transform: scale(1.1); }
+.carrito-cantidad { position: absolute; top: -4px; right: -4px; min-width: 24px; height: 24px; padding: 0 5px; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold; background: #FFD500; color: #8F0410; border-radius: 12px; border: 2px solid #fff; }
+
+.carrito-fondo { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1100; display: none; }
+.carrito-fondo.abierto { display: block; }
+
+.carrito-panel { position: fixed; top: 0; right: 0; bottom: 0; width: min(400px, 100%); background: #fff; z-index: 1200; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.3s ease; box-shadow: -4px 0 16px rgba(0,0,0,0.3); visibility: hidden; }
+.carrito-panel.abierto { transform: translateX(0); visibility: visible; }
+
+.carrito-cabecera { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; background: #B8050F; color: #fff; border-bottom: 4px solid #FFD500; }
+.carrito-cabecera h2 { margin: 0; font-size: 1.2rem; color: #fff; }
+.carrito-cabecera button { border: 0; background: none; color: #fff; font-size: 1.4rem; cursor: pointer; }
+
+.carrito-vacio { padding: 30px 20px; text-align: center; color: #666; }
+.carrito-lista { list-style: none; margin: 0; padding: 0 14px; overflow-y: auto; flex: 1; }
+.carrito-lista li { display: flex; align-items: center; gap: 8px; padding: 12px 0; border-bottom: 1px solid #EBD9D9; }
+.ci-info { flex: 1; display: flex; flex-direction: column; font-size: 0.9rem; color: #333; }
+.ci-info span { font-size: 0.8rem; color: #8F0410; }
+.ci-ctrl { display: flex; align-items: center; gap: 6px; }
+.ci-ctrl button { width: 28px; height: 28px; border: 0; border-radius: 50%; background: #E30613; color: #fff; font-size: 1rem; font-weight: bold; cursor: pointer; }
+.ci-ctrl span { min-width: 20px; text-align: center; font-weight: bold; }
+.ci-borrar { border: 0; background: none; cursor: pointer; font-size: 1.1rem; }
+
+.carrito-pie { padding: 14px 18px 18px; border-top: 2px solid #EBD9D9; background: #FAF3F3; }
+.carrito-envio { margin: 0 0 8px; font-size: 0.85rem; font-weight: bold; color: #8F0410; }
+.carrito-total { margin: 0 0 12px; font-size: 1.15rem; color: #333; }
+.carrito-enviar { display: block; width: 100%; padding: 13px; border: 0; border-radius: 8px; background: #25D366; color: #fff; font-size: 1rem; font-weight: bold; cursor: pointer; font-family: inherit; }
+.carrito-enviar:hover { background: #1da851; }
+.carrito-vaciar { display: block; width: 100%; margin-top: 8px; padding: 8px; border: 0; background: none; color: #8F0410; text-decoration: underline; cursor: pointer; font-family: inherit; }
+
+/* Dos botones por producto: Comprar (WhatsApp directo) y Añadir al carrito */
+.cat-seccion .acciones { margin-top: auto; display: flex; flex-direction: column; gap: 6px; }
+.cat-seccion .acciones .btn-pedir { margin-top: 0; }
+/* Comprar: rojo sólido de la marca (el de al lado, "Añadir al carrito", es blanco con borde rojo) */
+.cat-seccion .btn-comprar { background: #E30613; }
+.cat-seccion .btn-comprar:hover { background: #8F0410; }
+.cat-seccion .acciones .btn-carrito { background: #fff; color: #E30613; border: 2px solid #E30613; padding: 8px 4px; }
+.cat-seccion .acciones .btn-carrito:hover { background: #E30613; color: #fff; }

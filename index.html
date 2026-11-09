@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Página empresarial de Autoservicio Sandi J.V, supermercado y fruver en Villavicencio">
+  <title>Autoservicio Sandi J.V | Supermercado</title>
+
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+<!-- ===== ENCABEZADO ===== -->
+<header>
+  <img src="img/sandi%20jv.jpg" alt="Logo de Autoservicio Sandi J.V" class="logo-header">
+  <h1>SANDI J.V</h1>
+  <p>SUPERMERCADO Y FRUVER</p>
+
+  <!-- Menú -->
+  <nav>
+    <a href="index.html">INICIO</a>
+    <a href="frutas.html">FRUVER</a>
+  
+  </nav>
+
+  <!-- MAPA: queda en la esquina superior derecha -->
+  <a href="https://maps.app.goo.gl/6aAN67Bh5NcYKz3FA" class="btn-mapa" target="_blank" rel="noopener" aria-label="Cómo llegar a Autoservicio Sandi J.V">
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="#EA4335" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+    <span>Cómo llegar</span>
+  </a>
+</header>
+
+<!-- ===== BANNER DE DOMICILIOS ===== -->
+<div class="banner-domicilio">
+  <span class="etiqueta-domicilio">🛵 Domicilio gratis</span>
+  <p>por compras mayores a <strong>$100.000</strong></p>
+</div>
+
+<main>
+
+  <!-- ===== SECCIÓN PRINCIPAL ===== -->
+  <section id="sobre-mi">
+    <h2>Tu supermercado de confianza en Villavicencio</h2>
+
+    <!-- CARRUSEL: las fotos cambian solas cada 4 segundos (solo con CSS).
+         Para cambiar una foto, cambia el nombre del archivo en src.
+         Usa siempre "/" en las rutas, sin espacios ni tildes en los nombres. -->
+    <div class="slider">
+      <img src="img/negocio.jpg" alt="Fachada de Autoservicio Sandi J.V en Villavicencio">
+      <img src="img/pasillo-arroz-y-snacks.jpg" alt="Pasillo con arroz y snacks">
+      <img src="img/interior-monitor-y-tecate.jpg" alt="Interior con monitor y TeCate">
+     <img src="img\estante-papel-higienico.jpg" alt="Interior con monitor y TeCate">
+     <img src="img\estante-servilletas-y-toallas.jpg" alt="Interior con monitor y TeCate"> 
+      <img src="img\pasillo-snacks-todo-rico.jpg" alt="Interior con monitor y TeCate">
+     <img src="img\pasillo-mascotas-concentrado.jpg" alt="Interior con monitor y TeCate">
+     <img src="img\pasillo-aseo-limpiadores.jpg" alt="Interior con monitor y TeCate">
+    </div>
+
+    <p>Frutas y verduras frescas, canasta familiar y productos de aseo, todo en un solo lugar.</p>
+
+    <h3>Servicios</h3>
+    <ul>
+      <li>🛒 VENTA AL POR MAYOR Y MENOR</li>
+      <li>🏦 CORRESPONSAL BANCARIO</li>
+      <li>🏷️ PROMOCIONES Y OFERTAS</li>
+      <li>⭐ ALIADO SURTIMAX</li>
+    </ul>
+  </section>
+
+  <!-- ===== TIENDA VIRTUAL ===== -->
+  <section id="catalogo">
+    <h2>TIENDA VIRTUAL</h2>
+    <p class="subtitulo">Selecciona una categoría para explorar nuestros productos</p>
+
+    <div class="grid-categorias">
+
+      <!-- Categoría 1: Fruver (página aparte) -->
+      <div class="card-categoria">
+        <img src="img/Logotipo%20colorido%20FRUVER%20la%2033.png" alt="Logo de Fruver La 33" class="logo-card">
+        <h3>FRUVER LA 33</h3>
+        <p>Frutas, verduras y hortalizas frescas.</p>
+        <a href="frutas.html" class="btn-catalogo">Ver Catálogo</a>
+      </div>
+
+      <!-- Categoría 2: Víveres y Granos -->
+      <div class="card-categoria">
+        <div class="icono">🌾🍚</div>
+        <h3>VÍVERES Y GRANOS</h3>
+        <p>Arroz, aceite, granos y abarrote general.</p>
+        <a href="#viveres" class="btn-catalogo">Ver Catálogo</a>
+      </div>
+
+      <!-- Categoría 3: Licores y Bebidas -->
+      <div class="card-categoria">
+        <div class="icono">🍾🥤</div>
+        <h3>LICORES Y BEBIDAS</h3>
+        <p>Gaseosas, jugos, cervezas y licores.</p>
+        <a href="#licores" class="btn-catalogo">Ver Catálogo</a>
+      </div>
+
+      <!-- Categoría 4: Lácteos -->
+      <div class="card-categoria">
+        <div class="icono">🥛🧀</div>
+        <h3>LÁCTEOS</h3>
+        <p>Leche, quesos, yogures y derivados.</p>
+        <a href="#lacteos" class="btn-catalogo">Ver Catálogo</a>
+      </div>
+
+      <!-- Categoría 5: Aseo del Hogar -->
+      <div class="card-categoria">
+        <div class="icono">🧹🧼</div>
+        <h3>ARTÍCULOS DE ASEO</h3>
+        <p>Productos para la limpieza del hogar y cuidado personal.</p>
+        <a href="#aseo" class="btn-catalogo">Ver Catálogo</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== CATÁLOGO: VÍVERES Y GRANOS ===== -->
+  <section id="viveres" class="cat-seccion">
+
+    <a href="#catalogo" class="viv-cerrar">✕ Cerrar catálogo</a>
+
+    <div class="viv-intro">
+      <div>
+        <h2>Víveres y granos</h2>
+        <p>Arroz, aceite, granos y todo el abarrote que necesitas. Toca "Comprar" para pedir al instante o "Añadir al carrito" para enviar todo junto por WhatsApp.</p>
+        <div class="viv-indice">
+          <a href="#granos">🌾 Granos y cereales</a>
+          <a href="#abarrotes">🛒 Abarrotes</a>
+        </div>
+      </div>
+      <!-- Imagen del inicio: img/viveres/viveres_inicio.jpg (horizontal 4:3, ej. 1200 x 900 px) -->
+      <div class="viv-imagen">
+        <img src="img/viveres%20letreros.jpg" alt="Víveres y granos en Autoservicio Sandi J.V" onerror="this.style.display='none'">
+      </div>
+    </div>
+
+    <div class="viv-sub" id="granos">
+      <h3>Granos y cereales</h3>
+      <div class="grid-productos">
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/arroz.jpg" alt="Arroz Del Llano" loading="lazy"></div>
+          <h4>Arroz Del Llano</h4>
+          <p class="presentacion">Blanco · 500 g</p>
+          <p class="precio">$2.800</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Arroz%20Del%20Llano" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Arroz Del Llano" data-precio="2800">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/lenteja.jpg" alt="Lenteja El Trébol" loading="lazy"></div>
+          <h4>Lenteja El Trébol</h4>
+          <p class="presentacion">460 g</p>
+          <p class="precio">$2.300</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Lenteja%20El%20Tr%C3%A9bol" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Lenteja El Trébol" data-precio="2300">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/garbanzo.jpg" alt="Garbanzo El Trébol" loading="lazy"></div>
+          <h4>Garbanzo El Trébol</h4>
+          <p class="presentacion">460 g</p>
+          <p class="precio">$3.500</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Garbanzo%20El%20Tr%C3%A9bol" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Garbanzo El Trébol" data-precio="3500">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/avena.jpg" alt="Avena Quaker" loading="lazy"></div>
+          <h4>Avena Quaker</h4>
+          <p class="presentacion">Hojuelas · 400 g</p>
+          <p class="precio">$5.100</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Avena%20Quaker" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Avena Quaker" data-precio="5100">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="viv-sub" id="abarrotes">
+      <h3>Abarrotes</h3>
+      <div class="grid-productos">
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/aceite.jpg" alt="Aceite Ideal" loading="lazy"></div>
+          <h4>Aceite Ideal</h4>
+          <p class="presentacion">Vegetal de palma · 900 mL</p>
+          <p class="precio">$5.500</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Aceite%20Ideal" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Aceite Ideal" data-precio="5500">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/azucar.jpg" alt="Azúcar Incauca" loading="lazy"></div>
+          <h4>Azúcar Incauca</h4>
+          <p class="presentacion">Extrafina · 500 g</p>
+          <p class="precio">$3.300</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Az%C3%BAcar%20Incauca" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Azúcar Incauca" data-precio="3300">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/sal.jpg" alt="Sal Refisal" loading="lazy"></div>
+          <h4>Sal Refisal</h4>
+          <p class="presentacion">Alta pureza · 500 g</p>
+          <p class="precio">$1.500</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Sal%20Refisal" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Sal Refisal" data-precio="1500">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/pasta.jpg" alt="Spaghetti La Nieve" loading="lazy"></div>
+          <h4>Spaghetti La Nieve</h4>
+          <p class="presentacion">250 g</p>
+          <p class="precio">$1.400</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Spaghetti%20La%20Nieve" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Spaghetti La Nieve" data-precio="1400">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/cafe.jpg" alt="Café La Bastilla" loading="lazy"></div>
+          <h4>Café La Bastilla</h4>
+          <p class="presentacion">Tostado y molido · 200 g</p>
+          <p class="precio">$10.900</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Caf%C3%A9%20La%20Bastilla" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Café La Bastilla" data-precio="10900">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/panela.jpg" alt="Panela Selecta" loading="lazy"></div>
+          <h4>Panela Selecta</h4>
+          <p class="presentacion">Bloque</p>
+          <p class="precio">$2.600</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Panela%20Selecta" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Panela Selecta" data-precio="2600">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="viv-aviso">
+      <p>¿No encuentras lo que buscas? Escríbenos y te decimos qué tenemos hoy.</p>
+      <div class="botones-banner">
+        <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20consultar%20qu%C3%A9%20v%C3%ADveres%20tienen" class="btn-banner" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
+        <a href="#catalogo" class="btn-banner btn-banner-claro">Cerrar catálogo</a>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ===== CATÁLOGO: LICORES Y BEBIDAS ===== -->
+  <section id="licores" class="cat-seccion">
+
+    <a href="#catalogo" class="viv-cerrar">✕ Cerrar catálogo</a>
+
+    <div class="viv-intro">
+      <div>
+        <h2>Licores y bebidas</h2>
+        <p>Gaseosas, jugos, cervezas y licores. Toca "Comprar" para pedir al instante o "Añadir al carrito" para enviar todo junto por WhatsApp.</p>
+        <div class="viv-indice">
+          <a href="#gaseosas">🥤 Gaseosas y jugos</a>
+          <a href="#cervezas">🍺 Cervezas y licores</a>
+        </div>
+      </div>
+      <!-- Imagen del inicio: img/viveres/licores_inicio.jpg (horizontal 4:3, ej. 1200 x 900 px) -->
+      <div class="viv-imagen">
+        <img src="img/bebidas_licores.jpg" alt="Licores y bebidas en Autoservicio Sandi J.V" onerror="this.style.display='none'">
+      </div>
+    </div>
+
+    <div class="viv-sub" id="gaseosas">
+      <h3>Gaseosas y jugos</h3>
+      <div class="grid-productos">
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/gaseosa.jpg" alt="Coca-Cola Original" loading="lazy"></div>
+          <h4>Coca-Cola Original</h4>
+          <p class="presentacion">Botella familiar</p>
+          <p class="precio">$9.300</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Coca-Cola%20Original" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Coca-Cola Original" data-precio="9300">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/jugo.jpg" alt="Jugo Hit Mango" loading="lazy"></div>
+          <h4>Jugo Hit Mango</h4>
+          <p class="presentacion">1 L</p>
+          <p class="precio">$4.600</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Jugo%20Hit%20Mango" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Jugo Hit Mango" data-precio="4600">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/agua.jpg" alt="Agua Frescampo" loading="lazy"></div>
+          <h4>Agua Frescampo</h4>
+          <p class="presentacion">Sin gas · 1100 mL</p>
+          <p class="precio">$1.300</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Agua%20Frescampo" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Agua Frescampo" data-precio="1300">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/speed%20max.jpg" alt="speed max" loading="lazy"></div>
+          <h4>speed max</h4>
+          <p class="presentacion">lata</p>
+          <p class="precio">$2.000</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20speed%20max" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="speed max" data-precio="2000">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="viv-sub" id="cervezas">
+      <h3>Cervezas y licores</h3>
+      <p class="viv-nota">🔞 Venta solo a mayores de 18 años. El exceso de alcohol es perjudicial para la salud.</p>
+      <div class="grid-productos">
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/cerveza.jpg" alt="Cerveza Costeña Bacana" loading="lazy"></div>
+          <h4>Cerveza Costeña Bacana</h4>
+          <p class="presentacion">Lata 269 mL</p>
+          <p class="precio">$2.700</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Cerveza%20Coste%C3%B1a%20Bacana" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Cerveza Costeña Bacana" data-precio="2700">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/aguardientereal.jpg" alt="Aguardiente real" loading="lazy"></div>
+          <h4>Aguardiente real</h4>
+          <p class="presentacion">Botella</p>
+          <p class="precio">$38.400</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Aguardiente%20real" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Aguardiente real" data-precio="38400">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/something.jpg" alt="something special" loading="lazy"></div>
+          <h4>something special</h4>
+          <p class="presentacion">Botella</p>
+          <p class="precio">$58.400</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20something%20special" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="something special" data-precio="58400">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/vino.jpg" alt="Vino Gato Negro Semi Sweet" loading="lazy"></div>
+          <h4>Vino Gato Negro Semi Sweet</h4>
+          <p class="presentacion">Tinto · 750 mL</p>
+          <p class="precio">$39.700</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Vino%20Gato%20Negro%20Semi%20Sweet" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Vino Gato Negro Semi Sweet" data-precio="39700">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="viv-aviso">
+      <p>¿No encuentras lo que buscas? Escríbenos y te decimos qué tenemos hoy.</p>
+      <div class="botones-banner">
+        <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20consultar%20qu%C3%A9%20bebidas%20tienen" class="btn-banner" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
+        <a href="#catalogo" class="btn-banner btn-banner-claro">Cerrar catálogo</a>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ===== CATÁLOGO: LÁCTEOS ===== -->
+  <section id="lacteos" class="cat-seccion">
+
+    <a href="#catalogo" class="viv-cerrar">✕ Cerrar catálogo</a>
+
+    <div class="viv-intro">
+      <div>
+        <h2>Lácteos</h2>
+        <p>Leche, quesos, yogures y derivados. Toca "Comprar" para pedir al instante o "Añadir al carrito" para enviar todo junto por WhatsApp.</p>
+        <div class="viv-indice">
+          <a href="#leches">🥛 Leches</a>
+          <a href="#quesos">🧀 Quesos y yogures</a>
+        </div>
+      </div>
+      <!-- Imagen del inicio: img/viveres/lacteos_inicio.jpg (horizontal 4:3, ej. 1200 x 900 px) -->
+      <div class="viv-imagen">
+        <img src="img/lacteos.jpg" alt="Lácteos en Autoservicio Sandi J.V" onerror="this.style.display='none'">
+      </div>
+    </div>
+
+    <div class="viv-sub" id="leches">
+      <h3>Leches</h3>
+      <div class="grid-productos">
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/leche-entera.jpg" alt="Leche entera Olímpica" loading="lazy"></div>
+          <h4>Leche entera Olímpica</h4>
+          <p class="presentacion">UHT · bolsa 800 mL</p>
+          <p class="precio">$0.000</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Leche%20entera%20Ol%C3%ADmpica" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Leche entera Olímpica" data-precio="0">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/leche-en-polvo.jpg" alt="Leche en polvo San Diego" loading="lazy"></div>
+          <h4>Leche en polvo San Diego</h4>
+          <p class="presentacion">Entera · 380 g</p>
+          <p class="precio">$16.100</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Leche%20en%20polvo%20San%20Diego" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Leche en polvo San Diego" data-precio="16100">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/leche%20recreo.jpg" alt="Leche megalitro" loading="lazy"></div>
+          <h4>Leche megalitro</h4>
+          <p class="presentacion">Bolsa</p>
+          <p class="precio">$5.200</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Leche%20megalitro" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Leche megalitro" data-precio="5200">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/crema-de-leche.jpg" alt="Crema de leche Alquería" loading="lazy"></div>
+          <h4>Crema de leche Alquería</h4>
+          <p class="presentacion">Cocina · 180 g</p>
+          <p class="precio">$4.600</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Crema%20de%20leche%20Alquer%C3%ADa" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Crema de leche Alquería" data-precio="4600">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="viv-sub" id="quesos">
+      <h3>Quesos y yogures</h3>
+      <div class="grid-productos">
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/queso.jpg" alt="Queso Super Lonch&#x27;s" loading="lazy"></div>
+          <h4>Queso Super Lonch&#x27;s</h4>
+          <p class="presentacion">Doble crema tajado · 225 g</p>
+          <p class="precio">$8.200</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Queso%20Super%20Lonch%27s" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Queso Super Lonch&#x27;s" data-precio="8200">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/yogur.jpg" alt="Yagur Colanta" loading="lazy"></div>
+          <h4>Yagur Colanta</h4>
+          <p class="presentacion">Mora · 200 g</p>
+          <p class="precio">$1.500</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Yagur%20Colanta" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Yagur Colanta" data-precio="1500">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/mantequilla.jpg" alt="Margarina Gustosita" loading="lazy"></div>
+          <h4>Margarina Gustosita</h4>
+          <p class="presentacion">Con sal · 450 g</p>
+          <p class="precio">$10.000</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Margarina%20Gustosita" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Margarina Gustosita" data-precio="10000">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/avena%20en%20bolsa.jpg" alt="avena líquida" loading="lazy"></div>
+          <h4>avena líquida</h4>
+          <p class="presentacion">Unidad</p>
+          <p class="precio">$1.900</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20avena%20l%C3%ADquida" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="avena líquida" data-precio="1900">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="viv-aviso">
+      <p>¿No encuentras lo que buscas? Escríbenos y te decimos qué tenemos hoy.</p>
+      <div class="botones-banner">
+        <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20consultar%20qu%C3%A9%20l%C3%A1cteos%20tienen" class="btn-banner" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
+        <a href="#catalogo" class="btn-banner btn-banner-claro">Cerrar catálogo</a>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ===== CATÁLOGO: ARTÍCULOS DE ASEO ===== -->
+  <section id="aseo" class="cat-seccion">
+
+    <a href="#catalogo" class="viv-cerrar">✕ Cerrar catálogo</a>
+
+    <div class="viv-intro">
+      <div>
+        <h2>Artículos de aseo</h2>
+        <p>Productos para la limpieza del hogar y el cuidado personal. Toca "Comprar" para pedir al instante o "Añadir al carrito" para enviar todo junto por WhatsApp.</p>
+        <div class="viv-indice">
+          <a href="#aseo-hogar">🧹 Aseo del hogar</a>
+          <a href="#cuidado-personal">🧼 Cuidado personal</a>
+        </div>
+      </div>
+      <!-- Imagen del inicio: img/viveres/aseo_inicio.jpg (horizontal 4:3, ej. 1200 x 900 px) -->
+      <div class="viv-imagen">
+        <img src="img/zona%20de%20aseo.jpg" alt="Artículos de aseo en Autoservicio Sandi J.V" onerror="this.style.display='none'">
+      </div>
+    </div>
+
+    <div class="viv-sub" id="aseo-hogar">
+      <h3>Aseo del hogar</h3>
+      <div class="grid-productos">
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/detergente.jpg" alt="Detergente Ultrex" loading="lazy"></div>
+          <h4>Detergente Ultrex</h4>
+          <p class="presentacion">Fibraprotec · 4000 g</p>
+          <p class="precio">$49.400</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Detergente%20Ultrex" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Detergente Ultrex" data-precio="49400">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/jabon-de-barra.jpg" alt="Jabón Rey Dersa" loading="lazy"></div>
+          <h4>Jabón Rey Dersa</h4>
+          <p class="presentacion">Barra · 300 g</p>
+          <p class="precio">$3.000</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Jab%C3%B3n%20Rey%20Dersa" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Jabón Rey Dersa" data-precio="3000">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/blanqueador.jpg" alt="Clorox 5 en 1" loading="lazy"></div>
+          <h4>Clorox 5 en 1</h4>
+          <p class="presentacion">Garrafa grande</p>
+          <p class="precio">$6.600</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Clorox%205%20en%201" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Clorox 5 en 1" data-precio="6600">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/lava%20loza.jpg" alt="Jabón para lavar la loza" loading="lazy"></div>
+          <h4>Jabón para lavar la loza</h4>
+          <p class="presentacion">tarro</p>
+          <p class="precio">$3.000</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Jab%C3%B3n%20para%20lavar%20la%20loza" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Jabón para lavar la loza" data-precio="3000">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="viv-sub" id="cuidado-personal">
+      <h3>Cuidado personal</h3>
+      <div class="grid-productos">
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/papel-higienico.jpg" alt="Papel higiénico Familia" loading="lazy"></div>
+          <h4>Papel higiénico Familia</h4>
+          <p class="presentacion">AcolchaMax Megarrollo </p>
+          <p class="precio">$2.000</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Papel%20higi%C3%A9nico%20Familia" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Papel higiénico Familia" data-precio="2000">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/jabon-de-bano.jpg" alt="Jabón Protex" loading="lazy"></div>
+          <h4>Jabón Protex</h4>
+          <p class="presentacion">Limpieza profunda · 110 g</p>
+          <p class="precio">$3.500</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Jab%C3%B3n%20Protex" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Jabón Protex" data-precio="3500">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/champu.jpg" alt="Champú Head &amp; Shoulders" loading="lazy"></div>
+          <h4>Champú Head &amp; Shoulders</h4>
+          <p class="presentacion">2 en 1 · 375 mL</p>
+          <p class="precio">$21.300</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Champ%C3%BA%20Head%20%26%20Shoulders" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Champú Head &amp; Shoulders" data-precio="21300">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <div class="foto-producto"><img src="img/viveres/crema-dental.jpg" alt="Crema dental Colgate" loading="lazy"></div>
+          <h4>Crema dental Colgate</h4>
+          <p class="presentacion">Triple Acción · 125 mL</p>
+          <p class="precio">$4.500</p>
+          <div class="acciones">
+            <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20comprar%3A%20Crema%20dental%20Colgate" class="btn-pedir btn-comprar" target="_blank" rel="noopener">Comprar</a>
+            <button type="button" class="btn-pedir btn-carrito" data-nombre="Crema dental Colgate" data-precio="4500">🛒 Añadir al carrito</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="viv-aviso">
+      <p>¿No encuentras lo que buscas? Escríbenos y te decimos qué tenemos hoy.</p>
+      <div class="botones-banner">
+        <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20consultar%20qu%C3%A9%20art%C3%ADculos%20de%20aseo%20tienen" class="btn-banner" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
+        <a href="#catalogo" class="btn-banner btn-banner-claro">Cerrar catálogo</a>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- ===== PIE DE PÁGINA ===== -->
+<footer>
+  <p>&copy; 2026 jhoans vargas ·
+    <a href="mailto:jhoanssantiago@gmail.com?subject=Consulta%20desde%20la%20p%C3%A1gina%20de%20Sandi%20J.V&body=Hola%2C%20quiero%20consultar%20sobre%3A%20">NUESTRO CORREO</a>
+  </p>
+</footer>
+
+<!-- ===== CARRITO DE COMPRAS ===== -->
+<button type="button" class="btn-carrito-flotante" id="abrir-carrito" aria-label="Abrir carrito de compras">
+  🛒<span id="carrito-cantidad" class="carrito-cantidad" style="display:none">0</span>
+</button>
+<div class="carrito-fondo" id="carrito-fondo"></div>
+<aside class="carrito-panel" id="carrito-panel" aria-hidden="true" aria-label="Carrito de compras">
+  <div class="carrito-cabecera">
+    <h2>🛒 Tu pedido</h2>
+    <button type="button" id="carrito-cerrar" aria-label="Cerrar carrito">✕</button>
+  </div>
+  <p id="carrito-vacio" class="carrito-vacio">Tu carrito está vacío. Toca "Añadir" en los productos que quieras.</p>
+  <ul id="carrito-lista" class="carrito-lista"></ul>
+  <div id="carrito-pie" class="carrito-pie" style="display:none">
+    <p id="carrito-envio" class="carrito-envio"></p>
+    <p class="carrito-total">Total: <strong id="carrito-total">$0</strong></p>
+    <button type="button" id="carrito-enviar" class="carrito-enviar">Enviar pedido por WhatsApp</button>
+    <button type="button" id="carrito-vaciar" class="carrito-vaciar">Vaciar carrito</button>
+  </div>
+</aside>
+
+<!-- ===== BOTONES FLOTANTES (abajo a la derecha) ===== -->
+<a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20hacer%20un%20pedido" class="btn-whatsapp" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" width="32" height="32" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+<a href="https://www.facebook.com/profile.php?id=100066613130510" class="btn-facebook" target="_blank" rel="noopener" aria-label="Síguenos en Facebook">
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+</a>
+
+<script src="js/carrito.js" defer></script>
+</body>
+</html>

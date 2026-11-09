@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Frutas y verduras frescas de Autoservicio Sandi J.V en Villavicencio">
+  <title>Fruver | Autoservicio Sandi J.V</title>
+
+  <!-- ===== HOJAS DE ESTILO =====
+       1) estilos.css = lo que ya tienes (encabezado, banner de domicilios, pie de página y botones flotantes).
+       2) cssfr.css   = tu CSS nuevo SOLO para el fruver. Va DESPUÉS para poder cambiar lo anterior.
+       Si todavía no has creado css/cssfr.css, la página se verá con los estilos de estilos.css (no da error). -->
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/cssfr.css">
+</head>
+
+<!-- La clase "pagina-fruver" en el body sirve para que en cssfr.css puedas escribir reglas
+     solo para esta página, por ejemplo:  .pagina-fruver .producto { ... } -->
+<body class="pagina-fruver">
+
+<!-- ===== ENCABEZADO (igual al de la página principal) ===== -->
+<header>
+  <img src="img/sandi_jv.jpg" alt="Logo de Autoservicio Sandi J.V" class="logo-header">
+  <h1> SANDI J.V </h1>
+  <p>SUPERMERCADO Y FRUVER </p>
+  <!-- Menú: enlaces entre las páginas -->
+  <nav>
+    <a href="index.html">INICIO</a>
+    <a href="frutas.html">FRUVER</a>
+    <a href="viveres.html">VÍVERES</a>
+  </nav>
+</header>
+
+<!-- ===== BANNER DE DOMICILIOS (igual al de la página principal) ===== -->
+<div class="banner-domicilio">
+  <span class="etiqueta-domicilio">🛵 Domicilio gratis</span>
+  <p>por compras mayores a <strong>$100.000</strong></p>
+</div>
+
+<main>
+
+  <!-- ===== PORTADA DEL FRUVER (OPCIONAL: puedes borrar toda esta sección) =====
+       Usa el letrero digital que preparamos. Guarda el archivo en la carpeta img con este nombre:
+       img/fruver_la_33_letrero.jpg -->
+  <section class="portada-fruver">
+    <img src="img/fruver_la_33_letrero.jpg" alt="Fruver La 33: frutas y verduras frescas" class="imagen-portada">
+  </section>
+
+  <!-- ===== PRESENTACIÓN + ÍNDICE ===== -->
+  <section class="catalogo-intro">
+    <h2>Frutas y verduras frescas</h2>
+    <p>Productos frescos todos los días. Toca "Pedir" y te escribimos por WhatsApp.</p>
+    <!-- Índice: cada enlace salta a la sección que tenga el mismo id (href="#frutas" -> id="frutas") -->
+    <div class="indice">
+      <a href="#frutas">🍎 Frutas</a>
+      <a href="#verduras">🥕 Verduras y hortalizas</a>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       INSTRUCCIONES RÁPIDAS (léelas una vez y luego puedes borrar este comentario)
+
+       📸 CÓMO PONER UNA FOTO
+       1. Crea una carpeta llamada "fruver" dentro de tu carpeta "img"  ->  img/fruver/
+       2. Guarda ahí la foto del producto. Tamaño recomendado: cuadrada, 600 x 600 px,
+          formato .jpg y que pese menos de 100 KB (así la página carga rápido en el celular).
+       3. El nombre del archivo va en minúsculas, SIN tildes, SIN espacios y SIN ñ.
+          Si son dos palabras, únelas con guion:  "aguacate-hass.jpg"  (no "Aguacate Hass.jpg").
+       4. En la tarjeta del producto, busca la línea <img src="img/fruver/NOMBRE.jpg" ...>
+          y escribe el nombre exacto de tu archivo. Si no coincide al 100%, la foto no aparece.
+       5. En alt="..." escribe una descripción corta de la foto (ayuda a Google y a lectores de pantalla).
+
+       💲 CÓMO CAMBIAR EL PRECIO
+       Busca la línea <p class="precio">$0.000</p> de la tarjeta y cambia SOLO el texto que está
+       entre las etiquetas. Ejemplo:  <p class="precio">$3.500</p>
+       (Usa punto para los miles. No borres las etiquetas <p ...> ni </p>.)
+
+       ⚖️ CÓMO CAMBIAR LA PRESENTACIÓN (libra, kilo, unidad)
+       Cambia el texto de <p class="presentacion">Por libra</p>. Ejemplos: "Por kilo", "Unidad", "Bolsa x 5".
+
+       ✏️ CÓMO CAMBIAR EL NOMBRE
+       Cambia el texto de la etiqueta <h4>...</h4>.
+
+       💬 EL BOTÓN "PEDIR"
+       El enlace abre WhatsApp con el mensaje ya escrito. Para cambiarlo, edita lo que va después de
+       "text=" . Los espacios se escriben %20 y las tildes/ñ así: á=%C3%A1  é=%C3%A9  í=%C3%AD  ó=%C3%B3
+       ú=%C3%BA  ñ=%C3%B1.   Ejemplo:  text=Quiero%20pedir%3A%20Banano
+       ===================================================================== -->
+
+  <!-- ===== SECCIÓN 1: FRUTAS (6 productos) ===== -->
+  <section class="subcategoria" id="frutas">
+    <h3>Frutas</h3>
+    <div class="grid-productos">
+
+      <!-- PRODUCTO 1: BANANO -->
+      <div class="producto">
+        <div class="foto-producto">
+          <!-- FOTO: guarda la imagen como img/fruver/banano.jpg (o cambia el nombre aquí) -->
+          <img src="img/fruver/banano.jpg" alt="Banano maduro" loading="lazy">
+        </div>
+        <h4>Banano</h4>
+        <p class="presentacion">Por libra</p>
+        <!-- PRECIO: cambia $0.000 por el precio real -->
+        <p class="precio">$0.000</p>
+        <a href="https://wa.me/573052509956?text=Quiero%20pedir%3A%20Banano" class="btn-pedir" target="_blank" rel="noopener">Pedir</a>
+      </div>
+
+      <!-- PRODUCTO 2: MANZANA ROJA -->
+      <div class="producto">
+        <div class="foto-producto">
+          <!-- FOTO: img/fruver/manzana-roja.jpg -->
+          <img src="img/fruver/manzana-roja.jpg" alt="Manzana roja" loading="lazy">
+        </div>
+        <h4>Manzana roja</h4>
+        <p class="presentacion">Unidad</p>
+        <!-- PRECIO -->
+        <p class="precio">$0.000</p>
+        <a href="https://wa.me/573052509956?text=Quiero%20pedir%3A%20Manzana%20roja" class="btn-pedir" target="_blank" rel="noopener">Pedir</a>
+      </div>
+
+      <!-- PRODUCTO 3: NARANJA -->
+      <div class="producto">
+        <div class="foto-producto">
+          <!-- FOTO: img/fruver/naranja.jpg -->
+          <img src="img/fruver/naranja.jpg" alt="Naranjas frescas" loading="lazy">
+        </div>
+        <h4>Naranja</h4>
+        <p class="presentacion">Bolsa x 5</p>
+        <!-- PRECIO -->
+        <p class="precio">$0.000</p>
+        <a href="https://wa.me/573052509956?text=Quiero%20pedir%3A%20Naranja" class="btn-pedir" target="_blank" rel="noopener">Pedir</a>
+      </div>
+
+      <!-- PRODUCTO 4: MANGO -->
+      <div class="producto">
+        <div class="foto-producto">
+          <!-- FOTO: img/fruver/mango.jpg -->
+          <img src="img/fruver/mango.jpg" alt="Mango maduro" loading="lazy">
+        </div>
+        <h4>Mango</h4>
+        <p class="presentacion">Unidad</p>
+        <!-- PRECIO -->
+        <p class="precio">$0.000</p>
+        <a href="https://wa.me/573052509956?text=Quiero%20pedir%3A%20Mango" class="btn-pedir" target="_blank" rel="noopener">Pedir</a>
+      </div>
+
+      <!-- PRODUCTO 5: PAPAYA -->
+      <div class="producto">
+        <div class="foto-producto">
+          <!-- FOTO: img/fruver/papaya.jpg -->
+          <img src="img/fruver/papaya.jpg" alt="Papaya" loading="lazy">
+        </div>
+        <h4>Papaya</h4>
+        <p class="presentacion">Por libra</p>
+        <!-- PRECIO -->
+        <p class="precio">$0.000</p>
+        <a href="https://wa.me/573052509956?text=Quiero%20pedir%3A%20Papaya" class="btn-pedir" target="_blank" rel="noopener">Pedir</a>
+      </div>
+
+      <!-- PRODUCTO 6: AGUACATE -->
+      <div class="producto">
+        <div class="foto-producto">
+          <!-- FOTO: img/fruver/aguacate.jpg -->
+          <img src="img/fruver/aguacate.jpg" alt="Aguacate" loading="lazy">
+        </div>
+        <h4>Aguacate</h4>
+        <p class="presentacion">Unidad</p>
+        <!-- PRECIO -->
+        <p class="precio">$0.000</p>
+        <a href="https://wa.me/573052509956?text=Quiero%20pedir%3A%20Aguacate" class="btn-pedir" target="_blank" rel="noopener">Pedir</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN 2: VERDURAS Y HORTALIZAS (4 productos) ===== -->
+  <section class="subcategoria" id="verduras">
+    <h3>Verduras y hortalizas</h3>
+    <div class="grid-productos">
+
+      <!-- PRODUCTO 7: TOMATE -->
+      <div class="producto">
+        <div class="foto-producto">
+          <!-- FOTO: img/fruver/tomate.jpg -->
+          <img src="img/fruver/tomate.jpg" alt="Tomates frescos" loading="lazy">
+        </div>
+        <h4>Tomate</h4>
+        <p class="presentacion">Por libra</p>
+        <!-- PRECIO -->
+        <p class="precio">$0.000</p>
+        <a href="https://wa.me/573052509956?text=Quiero%20pedir%3A%20Tomate" class="btn-pedir" target="_blank" rel="noopener">Pedir</a>
+      </div>
+
+      <!-- PRODUCTO 8: CEBOLLA -->
+      <div class="producto">
+        <div class="foto-producto">
+          <!-- FOTO: img/fruver/cebolla.jpg -->
+          <img src="img/fruver/cebolla.jpg" alt="Cebolla" loading="lazy">
+        </div>
+        <h4>Cebolla</h4>
+        <p class="presentacion">Por libra</p>
+        <!-- PRECIO -->
+        <p class="precio">$0.000</p>
+        <a href="https://wa.me/573052509956?text=Quiero%20pedir%3A%20Cebolla" class="btn-pedir" target="_blank" rel="noopener">Pedir</a>
+      </div>
+
+      <!-- PRODUCTO 9: PAPA -->
+      <div class="producto">
+        <div class="foto-producto">
+          <!-- FOTO: img/fruver/papa.jpg -->
+          <img src="img/fruver/papa.jpg" alt="Papa" loading="lazy">
+        </div>
+        <h4>Papa</h4>
+        <p class="presentacion">Por kilo</p>
+        <!-- PRECIO -->
+        <p class="precio">$0.000</p>
+        <a href="https://wa.me/573052509956?text=Quiero%20pedir%3A%20Papa" class="btn-pedir" target="_blank" rel="noopener">Pedir</a>
+      </div>
+
+      <!-- PRODUCTO 10: ZANAHORIA -->
+      <div class="producto">
+        <div class="foto-producto">
+          <!-- FOTO: img/fruver/zanahoria.jpg -->
+          <img src="img/fruver/zanahoria.jpg" alt="Zanahorias" loading="lazy">
+        </div>
+        <h4>Zanahoria</h4>
+        <p class="presentacion">Por libra</p>
+        <!-- PRECIO -->
+        <p class="precio">$0.000</p>
+        <a href="https://wa.me/573052509956?text=Quiero%20pedir%3A%20Zanahoria" class="btn-pedir" target="_blank" rel="noopener">Pedir</a>
+      </div>
+
+      <!-- =====================================================================
+           ➕ PARA AGREGAR UN PRODUCTO NUEVO
+           1. Copia el bloque de abajo (sin las flechas de comentario de arriba y de abajo).
+           2. Pégalo aquí, antes de los </div> que cierran la cuadrícula.
+           3. Cambia: foto, alt, nombre, presentación, precio y el text= del enlace.
+
+           <div class="producto">
+             <div class="foto-producto">
+               <img src="img/fruver/NOMBRE.jpg" alt="Descripción de la foto" loading="lazy">
+             </div>
+             <h4>Nombre del producto</h4>
+             <p class="presentacion">Por libra</p>
+             <p class="precio">$0.000</p>
+             <a href="https://wa.me/573052509956?text=Quiero%20pedir%3A%20Nombre" class="btn-pedir" target="_blank" rel="noopener">Pedir</a>
+           </div>
+           ===================================================================== -->
+
+    </div>
+  </section>
+
+  <!-- ===== AVISO FINAL: "¿NO ENCUENTRAS TU PRODUCTO?" + BOTONES ===== -->
+  <section class="aviso-catalogo">
+    <p>¿Buscas otra fruta o verdura? Escríbenos, te decimos qué hay fresco hoy.</p>
+    <div class="botones-banner">
+      <a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20consultar%20qu%C3%A9%20hay%20fresco%20hoy" class="btn-banner" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
+      <a href="index.html" class="btn-banner btn-banner-claro">Volver al inicio</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== PIE DE PÁGINA (igual al de la página principal) ===== -->
+<footer>
+  <p>&copy; 2026 jhoans vargas · <a href="mailto:jhoanssantiago@gmail.com">NUESTRO CORREO</a></p>
+</footer>
+
+<!-- ===== BOTONES FLOTANTES (dentro del body, antes de cerrarlo) ===== -->
+<a href="https://wa.me/573052509956?text=Hola%2C%20quiero%20hacer%20un%20pedido" class="btn-whatsapp" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" width="32" height="32" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+<a href="https://www.facebook.com/profile.php?id=100066613130510" class="btn-facebook" target="_blank" rel="noopener" aria-label="Síguenos en Facebook">
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+</a>
+
+</body>
+</html>
